@@ -1,0 +1,25 @@
+mat-dialog-content {
+  min-width: 360px;
+  min-height: 240px;
+}
+
+.confirmation-dialog-header {
+  display: table;
+  justify-content: left;
+}
+
+.confirmation-dialog-header-avatar {
+  display: table-cell;
+  height: 32px;
+  width: 32px;
+  background-image: url('/assets/images/icons/utility-dialog/icons8-help-80.png');
+  background-size: cover;
+}
+
+.confirmation-dialog-header-title {
+  display: table-cell;
+  padding-left: 16px;
+  padding-right: 16px;
+  vertical-align: middle;
+  color: #2b2b2b;
+}

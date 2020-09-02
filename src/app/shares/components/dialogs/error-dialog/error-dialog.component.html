@@ -1,0 +1,19 @@
+<div mat-dialog-title class="error-dialog-header">
+  <div class="error-dialog-header-avatar">
+  </div>
+  <div class="error-dialog-header-title">
+    {{ errorDialogData.title }}
+  </div>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-content style="padding-top: 8px">
+  <mat-list>
+    <mat-list-item *ngFor="let message of errorDialogData.content">
+      {{ message }}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="understand()">فهمیدم</button>
+</mat-dialog-actions>

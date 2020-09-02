@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{ 'Preferences.Title' | translate }}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{ 'Preferences.SubTitle' | translate }}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <div mat-line>
+                    {{ 'Preferences.Persian' | translate }}
+                </div>
+                <div mat-line>
+                    <mat-slide-toggle [checked]="fa" (change)="faChanged($event)"></mat-slide-toggle>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div mat-line>
+                    {{ 'Preferences.English' | translate }}
+                </div>
+                <div mat-line>
+                    <mat-slide-toggle [checked]="!fa" (change)="enChanged($event)"></mat-slide-toggle>
+                </div>
+            </mat-list-item>
+            <mat-list-item>
+                <div mat-line>
+                    {{ 'Preferences.DarkTheme' | translate }}
+                </div>
+                <div mat-line>
+                    <mat-slide-toggle [checked]="dark" (change)="darkThemeChanged($event)"></mat-slide-toggle>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

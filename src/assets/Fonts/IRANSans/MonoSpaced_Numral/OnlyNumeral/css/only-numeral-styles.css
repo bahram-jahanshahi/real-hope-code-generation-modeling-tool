@@ -1,0 +1,4 @@
+@import url(only-numeral-font.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+.baf-number {
+  font-family: OnlyNumeralIRANSans !important;
+}

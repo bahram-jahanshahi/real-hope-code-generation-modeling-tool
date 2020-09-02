@@ -1,0 +1,49 @@
+<div fxLayoutAlign.gt-sm="center center" [ngClass]="dark ? 'dark-login' : null" style="height: 100%;">
+  <!-- Login Page -->
+  <mat-card
+    fxFlex.lt-md="100%"
+    fxFlex.gt-sm="360px"
+    [ngStyle.lt-md]="{'height': '100%'}"
+  >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image login-logo"></div>
+      <mat-card-title>{{ 'Login.BrandTitle' | translate }}</mat-card-title>
+      <mat-card-subtitle>{{ 'Login.BrandDescription' | translate }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <!-- Loading progress bar -->
+    <div class="mat-progress-bar-box">
+      <mat-progress-bar mode="indeterminate" *ngIf="waitingForResponse"></mat-progress-bar>
+    </div>
+    <mat-card-content style="padding-top: 32px;">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'Login.UserName' | translate}}</mat-label>
+        <input matInput [formControl]="usernameFormControl"
+               (keyup.enter)="login()">
+      </mat-form-field>
+      <br/>
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'Login.Password' | translate}}</mat-label>
+        <input type="password" matInput [formControl]="passwordFormControl"
+               (keyup.enter)="login()">
+      </mat-form-field>
+      <div style="display: flex; justify-content: center; padding-top: 24px">
+        <button mat-stroked-button (click)="login()" color="primary"
+                style="height: 48px; width: 80%"
+                [disabled]="waitingForResponse">
+          {{ 'Login.LoginButton' | translate }}
+        </button>
+      </div>
+      <br/>
+      <div style="height: 16px">
+                        <span style="color: red;"
+                              *ngIf="loginMessage != null && loginMessage.length > 0">{{loginMessage}}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button (click)="fa()">{{ 'Login.Fa' | translate }}</button>
+      <button mat-flat-button (click)="en()">{{ 'Login.En' | translate }}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

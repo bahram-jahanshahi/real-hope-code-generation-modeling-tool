@@ -1,0 +1,38 @@
+@font-face {
+  font-family: OnlyNumeralIRANSans;
+  font-style: normal;
+  font-weight: 900;
+  src: url('../IRANSansFaNum_Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: OnlyNumeralIRANSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url('../IRANSansOnlyNumeral_Bold.ttf') format('truetype');
+
+}
+@font-face {
+  font-family: OnlyNumeralIRANSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../IRANSansOnlyNumral_Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: OnlyNumeralIRANSans;
+  font-style: normal;
+  font-weight: 300;
+  src: url('../IRANSansOnlyNumeral_Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: OnlyNumeralIRANSans;
+  font-style: normal;
+  font-weight: 200;
+  src: url('../IRANSansOnlyNumeral_UltraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: OnlyNumeralIRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../IRANSansOnlyNumeral.ttf') format('truetype');
+
+}

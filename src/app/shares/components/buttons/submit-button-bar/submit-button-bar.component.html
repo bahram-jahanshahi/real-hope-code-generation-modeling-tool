@@ -1,0 +1,18 @@
+<div fxLayout
+     fxLayout.lt-md="column"
+     fxLayoutGap.gt-sm="16px"
+     fxLayoutGap.lt-md="16px"
+     style="justify-content: flex-end;">
+
+
+  <!-- Submit -->
+  <button mat-raised-button [disabled]="disabled || loading" (click)="submit()" color="primary">
+    {{submitButtonTitle}}
+  </button>
+  <!-- Cancel -->
+  <button mat-stroked-button [disabled]="loading" (click)="cancel()">
+    {{cancelButtonTitle}}
+  </button>
+  <!-- Loading -->
+  <mat-spinner *ngIf="loading" diameter="32" strokeWidth="1"></mat-spinner>
+</div>

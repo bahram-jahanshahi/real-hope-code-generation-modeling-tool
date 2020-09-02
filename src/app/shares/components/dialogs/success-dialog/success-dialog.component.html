@@ -1,0 +1,17 @@
+<div mat-dialog-title class="dialog-header">
+  <div class="dialog-header-avatar">
+  </div>
+  <div class="dialog-header-title">
+    Success!
+  </div>
+</div>
+<mat-dialog-content>
+  <b>
+    {{title}}
+  </b>
+  <br/><br/>
+  {{message}}
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="ok()">ok</button>
+</mat-dialog-actions>

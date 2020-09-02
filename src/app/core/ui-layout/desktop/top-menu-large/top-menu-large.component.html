@@ -1,0 +1,107 @@
+<mat-toolbar [class.mat-elevation-z2]="true">
+    <div class="brand-box"
+         [ngStyle]="{'width': isLargeWeb && ! isSideBarMinimized ? '239px' : '64px'}">
+        <div class="brand-img-box">
+            <div class="brand-img desktop-logo"></div>
+        </div>
+        <div class="brand-title-box" *ngIf="isLargeWeb && ! isSideBarMinimized">
+            <span>{{ 'TopMenu.BrandTitle' | translate }}</span>
+        </div>
+    </div>
+    <button mat-icon-button *ngIf="isLargeWeb" (click)="toggleSideBar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="top-menu-spacer"></span>
+    <!-- Messages -->
+    <button mat-icon-button [matMenuTriggerFor]="messagesMenu">
+        <mat-icon matBadge="2" matBadgeColor="primary">mail_outline</mat-icon>
+    </button>
+    <mat-menu #messagesMenu="matMenu">
+        <mat-list>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>speaker</mat-icon>
+                </div>
+                <div mat-line>
+                    اطلاعیه شماره ۳۵
+                </div>
+            </mat-list-item>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>mail_outline</mat-icon>
+                </div>
+                <div mat-line>
+                    دعوت به جلسه با مدیرعامل
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-menu>
+    <!-- Notification -->
+    <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+        <mat-icon matBadge="5" matBadgeColor="accent">notifications_active</mat-icon>
+    </button>
+    <mat-menu #notificationMenu="matMenu">
+        <mat-list>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>tab_unselected</mat-icon>
+                </div>
+                <div mat-line>
+                    واریز چک پرداختی به کیف پول
+                </div>
+            </mat-list-item>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>payment</mat-icon>
+                </div>
+                <div mat-line>
+                     سفارش ۱۲۳ منتظر پرداخت
+                </div>
+            </mat-list-item>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>alarm_on</mat-icon>
+                </div>
+                <div mat-line>
+                    سررسید ۲ کار گذشته است
+                </div>
+            </mat-list-item>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>check</mat-icon>
+                </div>
+                <div mat-line>
+                    ۲۳ لایسنس فعال شده است
+                </div>
+            </mat-list-item>
+            <mat-list-item mat-ripple>
+                <div mat-list-icon>
+                    <mat-icon>cancel</mat-icon>
+                </div>
+                <div mat-line>
+                    ۱۷ لایسنس پایان یافته است
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-menu>
+
+    <!-- User -->
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" style="width: 128px">
+        {{ loginUserName }}
+        <mat-icon>person_outline</mat-icon>
+    </button>
+    <mat-menu #userMenu="matMenu">
+        <button mat-menu-item [disabled]="true" *ngFor="let userRoleName of userRoleNames">
+          <span>{{userRoleName}}</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+            <mat-icon>account_box</mat-icon>
+            <span>{{ 'TopMenu.Profile' | translate }}</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>{{ 'TopMenu.Logout' | translate }}</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.custom.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -88,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.custom.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "real-hope-ng"
+    }
+  },
+  "defaultProject": "real-hope-ng",
+  "cli": {
+    "analytics": "0e35a077-3fe7-4155-bffb-5792dba57e4e"
+  }
 }

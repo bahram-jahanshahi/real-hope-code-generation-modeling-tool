@@ -1,0 +1,25 @@
+mat-dialog-content {
+  min-width: 360px;
+  max-width: 640px;
+  min-height: 240px;
+}
+
+.dialog-header {
+  display: table;
+  justify-content: left;
+}
+
+.dialog-header-avatar {
+  display: table-cell;
+  height: 32px;
+  width: 32px;
+  background-image: url('/assets/images/icons/utility-dialog/icons8-ok-96.png');
+  background-size: cover;
+}
+
+.dialog-header-title {
+  padding-left: 16px;
+  display: table-cell;
+  vertical-align: middle;
+  color: darkgreen;
+}

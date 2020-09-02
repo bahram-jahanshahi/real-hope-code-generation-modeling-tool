@@ -1,0 +1,48 @@
+<div mat-dialog-title>
+  {{ 'ViewSoftwareByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToView' style='height: 240px; display: flex; align-items: center; justify-content: center;'>
+    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>
+  </div>
+  <mat-tab-group *ngIf='readyToView'>
+    <mat-tab label="{{'ViewSoftwareByProjectManager.Profile' | translate}}">
+      <table class='baf-table' *ngIf='readyToView'>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewSoftwareByProjectManager.Id' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.id}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewSoftwareByProjectManager.Name' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.name}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewSoftwareByProjectManager.Title' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.title}}
+          </td>
+        </tr>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{ 'ViewSoftwareByProjectManager.Cancel' | translate }}  </button>
+  <button mat-flat-button (click)='editSoftware()'>
+    {{ 'ViewSoftwareByProjectManager.EditSoftware' | translate }}
+  </button>
+  <button mat-flat-button (click)='deleteSoftware()'>
+    {{ 'ViewSoftwareByProjectManager.DeleteSoftware' | translate }}
+  </button>
+</mat-dialog-actions>

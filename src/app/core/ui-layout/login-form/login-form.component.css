@@ -1,0 +1,33 @@
+mat-form-field {
+  width: 100%;
+  /*font-size: 18px;*/
+}
+
+button {
+  font-size: 16px;
+}
+
+mat-card-title {
+  /*color: #6c4884;*/
+}
+
+.dark-login {
+  background-color: #303030;
+}
+
+.example-header-image {
+  /*background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');*/
+  border-radius: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.mat-progress-bar-box {
+  height: 4px;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.mat-progress-bar {
+  width: 100%;
+}

@@ -1,0 +1,40 @@
+<div fxLayout
+     fxLayout.lt-md="row"
+     fxLayout.gt-sm="row"
+     fxLayoutGap.gt-sm="16px"
+     fxLayoutGap.lt-md="16px"
+     style="justify-content: flex-end;">
+  <mat-spinner *ngIf="loading" diameter="32" strokeWidth="1"></mat-spinner>
+  <mat-slide-toggle
+    [disabled]="loading"
+    class="example-margin"
+    color="accent"
+    [checked]="realtimeSearch"
+    (change)="realTimeSearchToggle($event)"
+    style="height: 42px">
+  </mat-slide-toggle>
+  <button mat-stroked-button [disabled]="loading" (click)="excel()">
+    <mat-icon>opacity</mat-icon>
+    <span *ngIf="isMedium">
+      {{ 'ListWalletByFinancialManager.ExcelButton' | translate}}
+    </span>
+  </button>
+  <button mat-stroked-button [disabled]="loading" (click)="reset()">
+    <mat-icon>refresh</mat-icon>
+    <span *ngIf="isMedium">
+      {{ 'ListWalletByFinancialManager.ResetButton' | translate}}
+    </span>
+  </button>
+  <button mat-raised-button color="primary" *ngIf="!realtimeSearch" (click)="search()" [disabled]="loading">
+    <mat-icon>search</mat-icon>
+    <span *ngIf="isMedium">
+      {{ 'ListWalletByFinancialManager.SearchButton' | translate}}
+    </span>
+  </button>
+  <button mat-stroked-button color="primary" *ngIf="realtimeSearch" (click)="search()" [disabled]="loading">
+    <mat-icon>search</mat-icon>
+    <span *ngIf="isMedium">
+      {{ 'ListWalletByFinancialManager.SearchButton' | translate}}
+    </span>
+  </button>
+</div>

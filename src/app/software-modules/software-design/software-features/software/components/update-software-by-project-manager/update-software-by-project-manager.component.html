@@ -1,0 +1,80 @@
+<div mat-dialog-title>
+  {{ 'UpdateSoftwareByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToUpdate' style='height: 240px; display: flex; align-items: center; justify-content: center;'>    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>  </div>  <form [formGroup]='reactiveForm' *ngIf='readyToUpdate'>    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSoftwareByProjectManager.Id' | translate}}
+        </mat-label>
+        <input matInput type='number' formControlName='id'>
+        <mat-error *ngIf="this.reactiveForm.get('id').invalid">
+          {{'UpdateSoftwareByProjectManager.IdError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSoftwareByProjectManager.SoftwareName' | translate}}
+        </mat-label>
+        <input matInput formControlName='softwareName'>
+        <mat-error *ngIf="this.reactiveForm.get('softwareName').invalid">
+          {{'UpdateSoftwareByProjectManager.SoftwareNameError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSoftwareByProjectManager.SoftwareTitle' | translate}}
+        </mat-label>
+        <input matInput formControlName='softwareTitle'>
+        <mat-error *ngIf="this.reactiveForm.get('softwareTitle').invalid">
+          {{'UpdateSoftwareByProjectManager.SoftwareTitleError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSoftwareByProjectManager.SpringBootProjectPath' | translate}}
+        </mat-label>
+        <input matInput formControlName='springBootProjectPath'>
+        <mat-error *ngIf="this.reactiveForm.get('springBootProjectPath').invalid">
+          {{'UpdateSoftwareByProjectManager.SpringBootProjectPathError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSoftwareByProjectManager.SpringBootProjectMainPackage' | translate}}
+        </mat-label>
+        <input matInput formControlName='springBootProjectMainPackage'>
+        <mat-error *ngIf="this.reactiveForm.get('springBootProjectMainPackage').invalid">
+          {{'UpdateSoftwareByProjectManager.SpringBootProjectMainPackageError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSoftwareByProjectManager.SpringBootJavaSrcPath' | translate}}
+        </mat-label>
+        <input matInput formControlName='springBootJavaSrcPath'>
+        <mat-error *ngIf="this.reactiveForm.get('springBootJavaSrcPath').invalid">
+          {{'UpdateSoftwareByProjectManager.SpringBootJavaSrcPathError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{'UpdateSoftwareByProjectManager.Close' | translate}}
+  </button>
+  <button mat-raised-button color='primary' (click)='submit()'>
+    {{'UpdateSoftwareByProjectManager.Submit' | translate}}
+  </button>
+</mat-dialog-actions>

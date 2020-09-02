@@ -1,0 +1,20 @@
+
+.error-dialog-header {
+  display: table;
+}
+
+.error-dialog-header-avatar {
+  display: table-cell;
+  height: 32px;
+  width: 32px;
+  background-image: url('/assets/images/icons/utility-dialog/icons8-cancel-48.png');
+  background-size: cover;
+}
+
+.error-dialog-header-title {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: table-cell;
+  vertical-align: middle;
+  color: darkred
+}

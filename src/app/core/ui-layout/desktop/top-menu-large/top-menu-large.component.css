@@ -1,0 +1,47 @@
+mat-toolbar {
+  background-color: white;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  padding: 0;
+}
+
+.brand-box {
+  display: table;
+  width: 239px;
+  height: 100%;
+  /*background-color: #652b8f;*/
+  /*background-color: #006064;*/
+  background-color: #faebd7;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: #e1dad0;
+}
+
+.brand-title-box {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  padding: 4px;
+  /*color: white;*/
+}
+
+.brand-img-box {
+  display: table-cell;
+  vertical-align: middle;
+  width: 48px;
+  height: 100%;
+  padding: 4px;
+}
+
+.brand-img {
+  /*background-image: url('/assets/images/icons/desktop/alumni-program-icon.png');
+  background-size: cover;*/
+  width: 48px;
+  height: 48px;
+}
+
+.top-menu-spacer {
+  flex: 1 1 auto;
+}
+

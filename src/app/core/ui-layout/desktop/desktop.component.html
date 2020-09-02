@@ -1,0 +1,63 @@
+<!-- side nav -->
+<mat-drawer-container class="example-container">
+  <mat-drawer #sidenav mode="{{sideNavMode}}" opened [(opened)]="isSideBarOpened"
+              [ngStyle]="{'width': (isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb ? '240px' : '64px'}">
+    <div class="brand-box">
+      <div class="brand-img-box">
+        <div class="brand-img"></div>
+      </div>
+      <div class="brand-title-box">
+                <span>
+                    {{ 'TopMenu.BrandTitle' | translate }}
+                </span>
+      </div>
+    </div>
+    <mat-action-list>
+      <!-- Dashboard -->
+      <button mat-list-item class="list-item" (click)="sideBarClicked('dashboard')">
+        <mat-icon matListIcon>dashboard</mat-icon>
+        <span matLine *ngIf="(isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb">
+                    {{ 'SideNav.Dashboard' | translate }}
+                </span>
+      </button>
+      <!-- Softwares -->
+      <button mat-list-item class="list-item" (click)="sideBarClicked('list-software-by-project-manager')">
+        <mat-icon matListIcon>playlist_add_check</mat-icon>
+        <span matLine *ngIf="(isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb">
+                    {{ 'SideNav.Software' | translate }}
+                </span>
+      </button>
+      <!-- Settings -->
+      <button mat-list-item class="list-item" (click)="sideBarClicked('preferences')">
+        <mat-icon matListIcon>playlist_add_check</mat-icon>
+        <span matLine *ngIf="(isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb">
+                    {{ 'SideNav.Preferences' | translate }}
+                </span>
+      </button>
+    </mat-action-list>
+  </mat-drawer>
+  <!-- Drawer Content -->
+  <mat-drawer-content
+    [ngStyle]="{
+                          'margin-right' : isRtl && ! isSideBarMinimized ? '240px' : '64px',
+                          'margin-left' : ! isRtl && ! isSideBarMinimized ? '240px' : '64px'
+                        }">
+    <mat-toolbar [class.mat-elevation-z2]="true" style="color: #EFEFEF; background-color: #006064"
+                 *ngIf="! isMediumWeb">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      {{ 'TopMenu.BrandTitle' | translate }}
+    </mat-toolbar>
+    <!-- Routed components go here -->
+    <div [ngClass]="mobileView ? 'router-container-mobile-view' : 'router-container-desktop-view'">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-top-menu-large *ngIf="isMediumWeb"
+                    (clickedEvent)="toggleSideBar($event)"
+                    (directionChangedEvent)="directionChanged($event)"
+                    (logoutEvent)="logout($event)">
+
+</app-top-menu-large>

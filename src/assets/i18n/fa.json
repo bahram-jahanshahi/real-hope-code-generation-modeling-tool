@@ -1,0 +1,16 @@
+{
+  "Login": {
+    "UserName": "نام کاربری",
+    "Password": "گذرواژه",
+    "BrandTitle": "امید راستین من",
+    "BrandDescription": "سامانه معماری و طراحی نرم‌افزار",
+    "LoginButton": "ورود",
+    "Fa": "فا",
+    "En": "En"
+  },
+  "SideNav": {
+    "Dashboard": "داشبورد",
+    "Preferences": "پسند شما",
+    "Software": "نرم‌افزارها"
+  }
+}

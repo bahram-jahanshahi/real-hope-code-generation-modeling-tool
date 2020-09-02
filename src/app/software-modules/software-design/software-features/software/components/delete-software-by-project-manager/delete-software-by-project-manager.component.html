@@ -1,0 +1,16 @@
+<div mat-dialog-title>
+  {{ 'DeleteSoftwareByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToDelete' style='height: 240px; display: flex; align-items: center; justify-content: center;'>
+    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{'DeleteSoftwareByProjectManager.Close' | translate}}
+  </button>
+  <button mat-raised-button color='primary' (click)='submit()'>
+    {{'DeleteSoftwareByProjectManager.Submit' | translate}}
+  </button>
+</mat-dialog-actions>

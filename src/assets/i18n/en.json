@@ -1,0 +1,16 @@
+{
+  "Login": {
+    "UserName": "Username",
+    "Password": "Password",
+    "BrandTitle": "AvShop Leadership",
+    "BrandDescription": "Leading padvish shop",
+    "LoginButton": "Login",
+    "Fa": "فا",
+    "En": "En",
+    "AgencyRegistration": "Agency Registration",
+    "Direct": "Direct",
+    "Mobile": "Mobile",
+    "QRCodeScan": "Please scan the QR code by your mobile device application.",
+    "DirectLoginRule": "Users are only able to login via mobile device application unless Amnpardaz gives him temporary permission."
+  }
+}

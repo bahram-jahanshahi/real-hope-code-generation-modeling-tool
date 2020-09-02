@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  background-image: url("assets/images/icons/login/background-image_7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
+}
+
+.baf-table {
+  width: 100%;
+}
+
+.baf-table > tr {
+  height: 32px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  height: 48px;
+}
+
+.baf-table > tr > td, th {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #ddd;
+  padding: 8px;
+}
+
+.baf-table-key {
+  /*color: #5d5d5d;*/
+  /*text-align: center;*/
+  font-weight: 400;
+}
+.baf-table-value {
+  font-weight: 600;
+  /*    text-align: center;*/
+}
+
+.login-logo {
+  background-image: url('assets/images/icons/login/hope3.png');
+  background-size: cover;
+}
+
+.desktop-logo {
+  background-image: url('assets/images/icons/login/alumni-program-icon.png');
+  background-size: cover;
+}
+
+fieldset {
+  border-color: #eaeaea;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.print-licence-header {
+  background-image: url('assets/images/licence_print/licenec_header.png');
+  background-repeat: no-repeat;
+  background-size: 720px 108px;
+}

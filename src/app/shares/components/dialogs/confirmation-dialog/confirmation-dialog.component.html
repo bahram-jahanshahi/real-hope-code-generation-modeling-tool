@@ -1,0 +1,20 @@
+<div mat-dialog-title class="confirmation-dialog-header">
+  <div class="confirmation-dialog-header-avatar">
+  </div>
+  <div class="confirmation-dialog-header-title">
+    {{ confirmationDialogData.title }}
+  </div>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-content style="padding-top: 8px">
+  <mat-list>
+    <mat-list-item *ngFor="let message of confirmationDialogData.content">
+      {{ message }}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="yes()">بلی</button>
+  <button mat-stroked-button (click)="no()" cdkFocusInitial>خیر</button>
+</mat-dialog-actions>

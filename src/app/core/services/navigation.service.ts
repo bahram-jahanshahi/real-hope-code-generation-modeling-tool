@@ -9,6 +9,7 @@ export class NavigationService {
   public DASHBOARD = 'DASHBOARD';
   public PREFERENCES = 'PREFERENCES';
   public LIST_SOFTWARE_BY_PROJECT_MANAGER = 'LIST_SOFTWARE_BY_PROJECT_MANAGER';
+  public LIST_USE_CASE_DATA_ATTRIBUTE_BY_PROJECT_MANAGER = 'LIST_USE_CASE_DATA_ATTRIBUTE_BY_PROJECT_MANAGER';
   constructor(private router: Router) {
   }
 
@@ -24,6 +25,10 @@ export class NavigationService {
       }
       case this.LIST_SOFTWARE_BY_PROJECT_MANAGER : {
         this.url('app/admin/software/list-software-by-project-manager');
+        break;
+      }
+      case this.LIST_USE_CASE_DATA_ATTRIBUTE_BY_PROJECT_MANAGER : {
+        this.url('app/admin/use-case-data-attribute/list-use-case-data-attribute-by-project-manager');
         break;
       }
     }

@@ -1,0 +1,94 @@
+<mat-card [ngStyle]='!isWebMedium ? {padding: 4} : {}'>
+  <mat-card-header *ngIf='isWebMedium'>
+    <mat-card-title>
+      {{'ListUseCaseDataAttributeByProjectManager.FormTitle' | translate}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider *ngIf='isWebMedium'></mat-divider>
+  <mat-card-content style='padding-top: 8px; padding-bottom: 92px'>
+    <!-- Search -->
+    <fieldset style='background-color: #f9f9f9; border-radius: 16px;'>
+      <legend>جستجو</legend>
+      <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'ListUseCaseDataAttributeByProjectManager.UseCaseDataAttributeNameSearchField' | translate}}
+          </mat-label>
+        <input matInput [formControl]='useCaseDataAttributeNameFormControl'>
+        </mat-form-field>
+      </div>
+    <app-search-button-bar
+        [loading]="loading"
+        (clickOnSearch)="search()"
+        (realTimeSearchChanged)="realTimeSearchChanged($event)"
+        (resetSearch)="resetSearchForm()">
+      </app-search-button-bar>
+    </fieldset>
+    <!-- Table -->
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' *ngIf='isWebMedium'>
+      <table mat-table [dataSource]='dataSource' style='width: 100%'>
+        <ng-container matColumnDef='Id'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseDataAttributeByProjectManager.IdColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.id}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='UseCaseName'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseDataAttributeByProjectManager.UseCaseNameColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.useCaseName}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='UseCaseDataName'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseDataAttributeByProjectManager.UseCaseDataNameColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.useCaseDataName}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='Name'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseDataAttributeByProjectManager.NameColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.name}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='UseCaseUsageEnum'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseDataAttributeByProjectManager.UseCaseUsageEnumColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.useCaseUsageEnum}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='AttributeCategory'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseDataAttributeByProjectManager.AttributeCategoryColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.attributeCategory}}
+          </mat-cell>
+        </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" mat-ripple
+                 (click)="view(row)"
+                 style="cursor: pointer">
+        </mat-row>
+      </table>
+    </div>
+    <!-- No result -->
+    <div *ngIf='dataArray.length === 0'>
+      <span style='color: #cf1414'>
+        نتیجه ای یافت نشد!
+      </span>
+    </div>
+    <!-- paginator -->
+    <mat-paginator [pageSizeOptions]='[5, 10, 20]' showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+</mat-card>

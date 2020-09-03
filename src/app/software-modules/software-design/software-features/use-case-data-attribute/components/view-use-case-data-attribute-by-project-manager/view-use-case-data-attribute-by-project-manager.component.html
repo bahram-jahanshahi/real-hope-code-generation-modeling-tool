@@ -1,0 +1,221 @@
+<div mat-dialog-title>
+  {{ 'ViewUseCaseDataAttributeByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToView' style='height: 240px; display: flex; align-items: center; justify-content: center;'>
+    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>
+  </div>
+  <mat-tab-group *ngIf='readyToView'>
+    <mat-tab label="{{'ViewUseCaseDataAttributeByProjectManager.Profile' | translate}}">
+      <table class='baf-table' *ngIf='readyToView'>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Id' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.id}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.UseCaseName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.useCaseName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.UseCaseDataName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.useCaseDataName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Name' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.name}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Title' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.title}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.FaTitle' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.faTitle}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Description' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.description}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.UseCaseUsageEnum' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.useCaseUsageEnum}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.AttributeQuantity' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.attributeQuantity}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.AttributeCategory' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.attributeCategory}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.PrimitiveAttributeType' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.primitiveAttributeType}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.SetterOfUpdatePath' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.setterOfUpdatePath}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.GetterOfUpdatePath' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.getterOfUpdatePath}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.DomainEntityAttributeType' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.domainEntityAttributeType}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.DataEntityAttributeType' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.dataEntityAttributeType}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.UseCaseData' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.useCaseData}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.FruitSeedsAttribute' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.fruitSeedsAttribute}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.DataEnum' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.dataEnum}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Nullable' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.nullable}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Required' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.required}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.MinLength' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.minLength}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.MaxLength' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.maxLength}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Min' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.min}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.Max' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.max}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseDataAttributeByProjectManager.ErrorTip' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.errorTip}}
+          </td>
+        </tr>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{ 'ViewUseCaseDataAttributeByProjectManager.Cancel' | translate }}  </button>
+  <button mat-flat-button (click)='updateUseCaseDataAttribute()'>
+    {{ 'ViewUseCaseDataAttributeByProjectManager.UpdateUseCaseDataAttribute' | translate }}
+  </button>
+</mat-dialog-actions>

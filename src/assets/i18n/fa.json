@@ -11,6 +11,12 @@
   "SideNav": {
     "Dashboard": "داشبورد",
     "Preferences": "پسند شما",
-    "Software": "نرم‌افزارها"
+    "Software": "نرم‌افزارها",
+    "UseCaseDataAttribute": "داده‌های مورد کاربری"
+  },
+  "SearchButtonBar": {
+    "ExcelButton": "اکسل",
+    "ResetButton": "از نو",
+    "SearchButton": "بیاب"
   }
 }

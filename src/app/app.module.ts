@@ -54,6 +54,10 @@ import {AddNewSoftwareByProjectManagerComponent} from './software-modules/softwa
 import {DeleteSoftwareByProjectManagerComponent} from './software-modules/software-design/software-features/software/components/delete-software-by-project-manager/delete-software-by-project-manager.component';
 import {UpdateSoftwareByProjectManagerComponent} from './software-modules/software-design/software-features/software/components/update-software-by-project-manager/update-software-by-project-manager.component';
 import {ViewSoftwareByProjectManagerComponent} from './software-modules/software-design/software-features/software/components/view-software-by-project-manager/view-software-by-project-manager.component';
+import {ListUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/list-use-case-data-attribute-by-project-manager/list-use-case-data-attribute-by-project-manager.component';
+import {SearchButtonBarComponent} from './shares/components/buttons/search-button-bar/search-button-bar.component';
+import {ViewUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/view-use-case-data-attribute-by-project-manager/view-use-case-data-attribute-by-project-manager.component';
+import {UpdateUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/update-use-case-data-attribute-by-project-manager/update-use-case-data-attribute-by-project-manager.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader { // TranslateHttpLoader {
@@ -67,7 +71,11 @@ export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader { 
 
 const appRoutes: Routes = [
   {path: 'app/dashboard', component: DashboardComponent},
-  {path: 'app/admin/software/list-software-by-project-manager', component: ListSoftwareByProjectManagerComponent}
+  {path: 'app/admin/software/list-software-by-project-manager', component: ListSoftwareByProjectManagerComponent},
+  {
+    path: 'app/admin/use-case-data-attribute/list-use-case-data-attribute-by-project-manager',
+    component: ListUseCaseDataAttributeByProjectManagerComponent
+  }
 ];
 
 @NgModule({
@@ -86,7 +94,11 @@ const appRoutes: Routes = [
     DeleteSoftwareByProjectManagerComponent,
     ListSoftwareByProjectManagerComponent,
     UpdateSoftwareByProjectManagerComponent,
-    ViewSoftwareByProjectManagerComponent
+    ViewSoftwareByProjectManagerComponent,
+    ListUseCaseDataAttributeByProjectManagerComponent,
+    ViewUseCaseDataAttributeByProjectManagerComponent,
+    UpdateUseCaseDataAttributeByProjectManagerComponent,
+    SearchButtonBarComponent
   ],
   imports: [
     BrowserModule,

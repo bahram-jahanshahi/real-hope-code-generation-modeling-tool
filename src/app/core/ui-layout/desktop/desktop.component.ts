@@ -107,6 +107,10 @@ export class DesktopComponent implements OnInit {
         this.url(this.navigationService.LIST_SOFTWARE_BY_PROJECT_MANAGER);
         break;
       }
+      case 'list-use-case-data-attribute-by-project-manager': {
+        this.url(this.navigationService.LIST_USE_CASE_DATA_ATTRIBUTE_BY_PROJECT_MANAGER);
+        break;
+      }
     }
   }
 

@@ -64,6 +64,7 @@ import {ViewUseCaseByProjectManagerComponent} from './software-modules/software-
 import {AddNewUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/add-new-use-case-by-project-manager/add-new-use-case-by-project-manager.component';
 import {UpdateUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/update-use-case-by-project-manager/update-use-case-by-project-manager.component';
 import {DeleteUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/delete-use-case-by-project-manager/delete-use-case-by-project-manager.component';
+import { UseCaseDataTableViewComponent } from './software-modules/software-design/software-features/use-case/components/view-use-case-by-project-manager/use-case-data-table-view/use-case-data-table-view.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader { // TranslateHttpLoader {
@@ -114,7 +115,8 @@ const appRoutes: Routes = [
     ViewUseCaseByProjectManagerComponent,
     AddNewUseCaseByProjectManagerComponent,
     UpdateUseCaseByProjectManagerComponent,
-    DeleteUseCaseByProjectManagerComponent
+    DeleteUseCaseByProjectManagerComponent,
+    UseCaseDataTableViewComponent
   ],
   imports: [
     BrowserModule,

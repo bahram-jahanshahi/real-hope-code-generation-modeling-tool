@@ -66,16 +66,16 @@ export class AddNewUseCaseByProjectManagerComponent implements OnInit {
     const generationEnableFruitSeeds = fruitSeeds.generationEnable;
     this.reactiveForm = new FormGroup({
       id: new FormControl(idFruitSeeds, [Validators.minLength(1), Validators.maxLength(100), Validators.min(1), Validators.max(10000000)]),
-      name: new FormControl(nameFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      title: new FormControl(titleFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      faTitle: new FormControl(faTitleFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      description: new FormControl(descriptionFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      userInterfaceTypeEnum: new FormControl(userInterfaceTypeEnumFruitSeeds.value, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      softwareFeature: new FormControl(softwareFeatureFruitSeeds.value, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(1), Validators.max(1)]),
-      softwareApplicationPanel: new FormControl(softwareApplicationPanelFruitSeeds.value, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(1), Validators.min(0), Validators.max(0)]),
-      softwareRole: new FormControl(softwareRoleFruitSeeds.value, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      dataEntity: new FormControl(dataEntityFruitSeeds.value, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)]),
-      generationEnable: new FormControl(generationEnableFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.min(0), Validators.max(0)])
+      name: new FormControl(nameFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+      title: new FormControl(titleFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+      faTitle: new FormControl(faTitleFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+      description: new FormControl(descriptionFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+      userInterfaceTypeEnum: new FormControl(userInterfaceTypeEnumFruitSeeds.value, [Validators.nullValidator, Validators.required]),
+      softwareFeature: new FormControl(softwareFeatureFruitSeeds.value, [Validators.nullValidator, Validators.required]),
+      softwareApplicationPanel: new FormControl(softwareApplicationPanelFruitSeeds.value, [Validators.nullValidator, Validators.required]),
+      softwareRole: new FormControl(softwareRoleFruitSeeds.value, [Validators.nullValidator, Validators.required]),
+      dataEntity: new FormControl(dataEntityFruitSeeds.value, [Validators.nullValidator, Validators.required]),
+      generationEnable: new FormControl(generationEnableFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)])
     });
     this.readyToUpdate = true;
   }

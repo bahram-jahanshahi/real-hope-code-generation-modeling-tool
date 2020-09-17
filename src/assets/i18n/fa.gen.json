@@ -269,26 +269,6 @@
     ,"ViewUseCase": "نمایش مورد کاربری"
     ,"AddNewUseCase": "افزودن مورد کاربری"
   },
-  "ViewUseCaseByProjectManager": {
-    "FormTitle": "نمایش مورد کاربری"
-    ,"Cancel": "بازگشت"
-    ,"Profile": "نمایه"
-    ,"Id": "شناسه"
-    ,"UseCaseName": "عنوان فنی"
-    ,"Title": "عنوان"
-    ,"FaTitle": "نام فارسی"
-    ,"Description": "شرح"
-    ,"UserInterfaceType": "کاربرد در واسط گرافیکی"
-    ,"SoftwareName": "نرم افزار"
-    ,"SoftwareModuleName": "ماژول نرم افزاری"
-    ,"SoftwareFeatureName": "ويژگی نرم افزاری"
-    ,"SoftwareApplicationPanelName": "پنل نرم افزاری"
-    ,"SoftwareRole": "نقش کاربری"
-    ,"DataEntity": "موجودیت دیتابیسی"
-    ,"GenerationEnable": "آیا تولید شود؟"
-    ,"UpdateUseCase": "ویرایش مورد کاربری"
-    ,"DeleteUseCase": "حذف مورد کاربری"
-  },
   "AddNewUseCaseByProjectManager": {
     "FormTitle": "افزودن مورد کاربری"
     ,"Cancel": "بازگشت"

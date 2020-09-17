@@ -1,0 +1,26 @@
+<div style="padding-top: 8px">
+  <button mat-stroked-button color="primary" (click)="addNew()" >
+    Add
+  </button>
+  <table class="baf-table">
+    <tr *ngFor="let attribute of dataArray">
+      <td style="width: 20px">
+        {{attribute.id}}
+      </td>
+      <td>
+        {{attribute.name}}
+      </td>
+      <td>
+        {{attribute.attributeCategory}}
+      </td>
+      <td>
+        {{attribute.primitiveAttributeType}}
+      </td>
+      <td style="width: 40px">
+        <button mat-stroked-button color="primary" (click)="view(attribute.id)" >
+          View
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

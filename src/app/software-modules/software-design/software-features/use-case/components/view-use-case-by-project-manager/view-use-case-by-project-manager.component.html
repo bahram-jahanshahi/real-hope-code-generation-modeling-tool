@@ -114,6 +114,22 @@
         </tr>
       </table>
     </mat-tab>
+    <mat-tab label="Data">
+      <mat-tab-group>
+        <mat-tab label="Plant">
+          <app-use-case-data-table-view [dataArray]="entity.plantAttributes"></app-use-case-data-table-view>
+        </mat-tab>
+        <mat-tab label="Fruit">
+          <app-use-case-data-table-view [dataArray]="entity.fruitAttributes"></app-use-case-data-table-view>
+        </mat-tab>
+        <mat-tab label="SeedsCommand">
+          <app-use-case-data-table-view [dataArray]="entity.seedsCommandAttributes"></app-use-case-data-table-view>
+        </mat-tab>
+        <mat-tab label="FruitSeeds">
+          <app-use-case-data-table-view [dataArray]="entity.fruitSeedsAttributes"></app-use-case-data-table-view>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-tab>
   </mat-tab-group>
 </mat-dialog-content>
 <mat-dialog-actions>

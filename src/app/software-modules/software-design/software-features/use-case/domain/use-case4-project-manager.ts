@@ -1,3 +1,5 @@
+import {UseCaseDataAttribute4ProjectManager} from '../../use-case-data-attribute/domain/use-case-data-attribute4-project-manager';
+
 export class UseCase4ProjectManager {
   id: number; // The id of use case
   useCaseName: string; // The name of use case
@@ -12,4 +14,8 @@ export class UseCase4ProjectManager {
   softwareRole: string; // The software role
   dataEntity: string; // The data entity
   generationEnable: boolean; // The generation enable
+  plantAttributes: Array<UseCaseDataAttribute4ProjectManager>;
+  fruitAttributes: Array<UseCaseDataAttribute4ProjectManager>;
+  seedsCommandAttributes: Array<UseCaseDataAttribute4ProjectManager>;
+  fruitSeedsAttributes: Array<UseCaseDataAttribute4ProjectManager>;
 }

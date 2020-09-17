@@ -8,11 +8,15 @@
     "Fa": "فا",
     "En": "En"
   },
+  "TopMenu": {
+    "BrandTitle": "امید راستین"
+  },
   "SideNav": {
     "Dashboard": "داشبورد",
     "Preferences": "پسند شما",
     "Software": "نرم‌افزارها",
-    "UseCaseDataAttribute": "داده‌های مورد کاربری"
+    "UseCaseDataAttribute": "داده‌های مورد کاربری",
+    "UseCase": "موردهای کاربری"
   },
   "SearchButtonBar": {
     "ExcelButton": "اکسل",

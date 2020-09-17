@@ -1,83 +1,83 @@
 <div mat-dialog-title>
-  {{ 'UpdateUseCaseDataAttributeByProjectManager.FormTitle' | translate }}
+  {{ 'AddNewUseCaseDataAttributeByProjectManager.FormTitle' | translate }}
 </div>
 <mat-dialog-content>
   <div *ngIf='!readyToUpdate' style='height: 240px; display: flex; align-items: center; justify-content: center;'>    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>  </div>  <form [formGroup]='reactiveForm' *ngIf='readyToUpdate'>    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Name' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Name' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='name'>
         <mat-error *ngIf="this.reactiveForm.get('name').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.NameError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.NameError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Title' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Title' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='title'>
         <mat-error *ngIf="this.reactiveForm.get('title').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.TitleError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.TitleError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.FaTitle' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.FaTitle' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='faTitle'>
         <mat-error *ngIf="this.reactiveForm.get('faTitle').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.FaTitleError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.FaTitleError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Description' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Description' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='description'>
         <mat-error *ngIf="this.reactiveForm.get('description').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.DescriptionError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DescriptionError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.UiRow' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UiRow' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput type='number' formControlName='uiRow'>
         <mat-error *ngIf="this.reactiveForm.get('uiRow').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.UiRowError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UiRowError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.UiColumn' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UiColumn' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput type='number' formControlName='uiColumn'>
         <mat-error *ngIf="this.reactiveForm.get('uiColumn').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.UiColumnError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UiColumnError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.UseCaseUsageEnum' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UseCaseUsageEnum' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='useCaseUsageEnumEnum'>
@@ -86,14 +86,14 @@
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('useCaseUsageEnumEnum').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.UseCaseUsageEnumError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UseCaseUsageEnumError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.AttributeQuantity' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.AttributeQuantity' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='attributeQuantityEnum'>
@@ -102,14 +102,14 @@
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('attributeQuantityEnum').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.AttributeQuantityError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.AttributeQuantityError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.AttributeCategory' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.AttributeCategory' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='attributeCategoryEnum'>
@@ -118,14 +118,14 @@
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('attributeCategoryEnum').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.AttributeCategoryError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.AttributeCategoryError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.PrimitiveAttributeType' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.PrimitiveAttributeType' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='primitiveAttributeTypeEnum'>
@@ -134,160 +134,160 @@
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('primitiveAttributeTypeEnum').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.PrimitiveAttributeTypeError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.PrimitiveAttributeTypeError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.SetterOfUpdatePath' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.SetterOfUpdatePath' | translate}}
 
         </mat-label>
         <input matInput formControlName='setterOfUpdatePath'>
         <mat-error *ngIf="this.reactiveForm.get('setterOfUpdatePath').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.SetterOfUpdatePathError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.SetterOfUpdatePathError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.GetterOfUpdatePath' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.GetterOfUpdatePath' | translate}}
 
         </mat-label>
         <input matInput formControlName='getterOfUpdatePath'>
         <mat-error *ngIf="this.reactiveForm.get('getterOfUpdatePath').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.GetterOfUpdatePathError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.GetterOfUpdatePathError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Nullable' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Nullable' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='nullable'>
-        <mat-option [value]='false'>{{'UpdateUseCaseDataAttributeByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'UpdateUseCaseDataAttributeByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        <mat-error *ngIf="this.reactiveForm.get('nullable').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.NullableError' | translate}}
+        <mat-option [value]='false'>{{'AddNewUseCaseDataAttributeByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'AddNewUseCaseDataAttributeByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        <mat-error *ngIf="this.reactiveForm.get('nullable').invalid">
+          {{'AddNewUseCaseDataAttributeByProjectManager.NullableError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Required' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Required' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='required'>
-        <mat-option [value]='false'>{{'UpdateUseCaseDataAttributeByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'UpdateUseCaseDataAttributeByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        <mat-error *ngIf="this.reactiveForm.get('required').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.RequiredError' | translate}}
+        <mat-option [value]='false'>{{'AddNewUseCaseDataAttributeByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'AddNewUseCaseDataAttributeByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        <mat-error *ngIf="this.reactiveForm.get('required').invalid">
+          {{'AddNewUseCaseDataAttributeByProjectManager.RequiredError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.MinLength' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.MinLength' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput type='number' formControlName='minLength'>
         <mat-error *ngIf="this.reactiveForm.get('minLength').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.MinLengthError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.MinLengthError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.MaxLength' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.MaxLength' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput type='number' formControlName='maxLength'>
         <mat-error *ngIf="this.reactiveForm.get('maxLength').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.MaxLengthError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.MaxLengthError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Min' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Min' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput type='number' formControlName='min'>
         <mat-error *ngIf="this.reactiveForm.get('min').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.MinError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.MinError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.Max' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.Max' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput type='number' formControlName='max'>
         <mat-error *ngIf="this.reactiveForm.get('max').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.MaxError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.MaxError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.ErrorTip' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.ErrorTip' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='errorTip'>
         <mat-error *ngIf="this.reactiveForm.get('errorTip').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.ErrorTipError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.ErrorTipError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.DomainEntityAttributeType' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DomainEntityAttributeType' | translate}}
 
         </mat-label>
         <mat-select formControlName='domainEntityAttributeType'>
           <mat-option [value]='null'>
-            {{ 'UpdateUseCaseDataAttributeByProjectManager.None' | translate }}
+            {{ 'AddNewUseCaseDataAttributeByProjectManager.None' | translate }}
           </mat-option>
           <mat-option *ngFor='let domainEntityAttributeType of domainEntityAttributeTypeArray' [value]='domainEntityAttributeType.value'>
             {{domainEntityAttributeType.title}}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('domainEntityAttributeType').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.DomainEntityAttributeTypeError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DomainEntityAttributeTypeError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.DataEntityAttributeType' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DataEntityAttributeType' | translate}}
 
         </mat-label>
         <mat-select formControlName='dataEntityAttributeType'>
           <mat-option [value]='null'>
-            {{ 'UpdateUseCaseDataAttributeByProjectManager.None' | translate }}
+            {{ 'AddNewUseCaseDataAttributeByProjectManager.None' | translate }}
           </mat-option>
           <mat-option *ngFor='let dataEntityAttributeType of dataEntityAttributeTypeArray' [value]='dataEntityAttributeType.value'>
             {{dataEntityAttributeType.title}}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('dataEntityAttributeType').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.DataEntityAttributeTypeError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DataEntityAttributeTypeError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.UseCaseData' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UseCaseData' | translate}}
           <span style='color: red;'>*</span>
         </mat-label>
         <mat-select formControlName='useCaseData'>
@@ -296,45 +296,45 @@
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('useCaseData').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.UseCaseDataError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.UseCaseDataError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.FruitSeedsAttribute' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.FruitSeedsAttribute' | translate}}
 
         </mat-label>
         <mat-select formControlName='fruitSeedsAttribute'>
           <mat-option [value]='null'>
-            {{ 'UpdateUseCaseDataAttributeByProjectManager.None' | translate }}
+            {{ 'AddNewUseCaseDataAttributeByProjectManager.None' | translate }}
           </mat-option>
           <mat-option *ngFor='let fruitSeedsAttribute of fruitSeedsAttributeArray' [value]='fruitSeedsAttribute.value'>
             {{fruitSeedsAttribute.title}}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('fruitSeedsAttribute').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.FruitSeedsAttributeError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.FruitSeedsAttributeError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
     <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'UpdateUseCaseDataAttributeByProjectManager.DataEnum' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DataEnum' | translate}}
 
         </mat-label>
         <mat-select formControlName='dataEnum'>
           <mat-option [value]='null'>
-            {{ 'UpdateUseCaseDataAttributeByProjectManager.None' | translate }}
+            {{ 'AddNewUseCaseDataAttributeByProjectManager.None' | translate }}
           </mat-option>
           <mat-option *ngFor='let dataEnum of dataEnumArray' [value]='dataEnum.value'>
             {{dataEnum.title}}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="this.reactiveForm.get('dataEnum').invalid">
-          {{'UpdateUseCaseDataAttributeByProjectManager.DataEnumError' | translate}}
+          {{'AddNewUseCaseDataAttributeByProjectManager.DataEnumError' | translate}}
         </mat-error>
       </mat-form-field>
     </div>
@@ -342,9 +342,9 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-flat-button (click)='close()'>
-    {{'UpdateUseCaseDataAttributeByProjectManager.Close' | translate}}
+    {{'AddNewUseCaseDataAttributeByProjectManager.Close' | translate}}
   </button>
   <button mat-raised-button color='primary' (click)='submit()'>
-    {{'UpdateUseCaseDataAttributeByProjectManager.Submit' | translate}}
+    {{'AddNewUseCaseDataAttributeByProjectManager.Submit' | translate}}
   </button>
 </mat-dialog-actions>

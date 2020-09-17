@@ -21,6 +21,7 @@ import {
 } from '../../services/list-use-case-data-attribute-by-project-manager.service';
 import {UseCaseDataAttribute4ProjectManager} from '../../domain/use-case-data-attribute4-project-manager';
 import {ViewUseCaseDataAttributeByProjectManagerComponent} from '../view-use-case-data-attribute-by-project-manager/view-use-case-data-attribute-by-project-manager.component';
+import {AddNewUseCaseDataAttributeByProjectManagerComponent} from '../add-new-use-case-data-attribute-by-project-manager/add-new-use-case-data-attribute-by-project-manager.component';
 
 @Component({
   selector: 'app-list-use-case-data-attribute-by-project-manager',
@@ -129,14 +130,18 @@ export class ListUseCaseDataAttributeByProjectManagerComponent implements OnInit
     this.realTimeSearchEnabled = $event;
   }
 
-  view(row: any) {
+  view(row: any): void {
     this.dialogService
       .quickPopupDialog(ViewUseCaseDataAttributeByProjectManagerComponent, row.id)
       .afterClosed()
       .subscribe(value => this.search());
   }
 
-  addNew() {
+  addNew(): void {
+    this.dialogService
+      .quickPopupDialog(AddNewUseCaseDataAttributeByProjectManagerComponent, null)
+      .afterClosed()
+      .subscribe(value => this.search());
   }
 
 }

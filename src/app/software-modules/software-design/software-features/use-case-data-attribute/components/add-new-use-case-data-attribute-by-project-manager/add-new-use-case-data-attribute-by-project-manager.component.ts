@@ -9,20 +9,20 @@ import {ErrorDialogData} from '../../../../../../shares/components/dialogs/error
 import {UseCaseCommand} from '../../../../../../core/domain/use-case-command';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {
-  UpdateUseCaseDataAttributeByProjectManagerPlant,
-  UpdateUseCaseDataAttributeByProjectManagerSeedsCommand,
-  UpdateUseCaseDataAttributeByProjectManagerFruitSeeds,
-  UpdateUseCaseDataAttributeByProjectManagerService
-} from '../../services/update-use-case-data-attribute-by-project-manager.service';
+  AddNewUseCaseDataAttributeByProjectManagerPlant,
+  AddNewUseCaseDataAttributeByProjectManagerSeedsCommand,
+  AddNewUseCaseDataAttributeByProjectManagerFruitSeeds,
+  AddNewUseCaseDataAttributeByProjectManagerService
+} from '../../services/add-new-use-case-data-attribute-by-project-manager.service';
 import {SelectEnum} from '../../../../../../core/domain/select-enum';
 import {SelectEntity} from '../../../../../../core/domain/select-entity';
 
 @Component({
-  selector: 'app-update-use-case-data-attribute-by-project-manager',
-  templateUrl: './update-use-case-data-attribute-by-project-manager.component.html',
-  styleUrls: ['./update-use-case-data-attribute-by-project-manager.component.css']
+  selector: 'app-add-new-use-case-data-attribute-by-project-manager',
+  templateUrl: './add-new-use-case-data-attribute-by-project-manager.component.html',
+  styleUrls: ['./add-new-use-case-data-attribute-by-project-manager.component.css']
 })
-export class UpdateUseCaseDataAttributeByProjectManagerComponent implements OnInit {
+export class AddNewUseCaseDataAttributeByProjectManagerComponent implements OnInit {
   entityId: number;
   readyToUpdate = false;
   loading = false;
@@ -38,11 +38,11 @@ export class UpdateUseCaseDataAttributeByProjectManagerComponent implements OnIn
   fruitSeedsAttributeArray: Array<SelectEntity>;
   dataEnumArray: Array<SelectEntity>;
 
-  constructor(private useCase: UpdateUseCaseDataAttributeByProjectManagerService,
+  constructor(private useCase: AddNewUseCaseDataAttributeByProjectManagerService,
               private dialogService: UtilityDialogService,
               private localeService: LocaleService,
               private dateService: UtilityDateService,
-              public dialogRef: MatDialogRef<UpdateUseCaseDataAttributeByProjectManagerComponent>,
+              public dialogRef: MatDialogRef<AddNewUseCaseDataAttributeByProjectManagerComponent>,
               @Inject(MAT_DIALOG_DATA) public data: number) {
     this.entityId = data;
   }
@@ -51,7 +51,7 @@ export class UpdateUseCaseDataAttributeByProjectManagerComponent implements OnIn
     this.prepare();
   }
 
-  init(fruitSeeds: UpdateUseCaseDataAttributeByProjectManagerFruitSeeds): void {
+  init(fruitSeeds: AddNewUseCaseDataAttributeByProjectManagerFruitSeeds): void {
     const idFruitSeeds = fruitSeeds.id;
     const nameFruitSeeds = fruitSeeds.name;
     const titleFruitSeeds = fruitSeeds.title;
@@ -154,8 +154,8 @@ export class UpdateUseCaseDataAttributeByProjectManagerComponent implements OnIn
     const fruitSeedsAttributeInput = new SelectEntity(null, this.reactiveForm.get('fruitSeedsAttribute').value);
     const dataEnumInput = new SelectEntity(null, this.reactiveForm.get('dataEnum').value);
     this.useCase
-      .cultivate(new UseCaseCommand<UpdateUseCaseDataAttributeByProjectManagerPlant>(
-        new UpdateUseCaseDataAttributeByProjectManagerPlant(
+      .cultivate(new UseCaseCommand<AddNewUseCaseDataAttributeByProjectManagerPlant>(
+        new AddNewUseCaseDataAttributeByProjectManagerPlant(
           idInput,
           nameInput,
           titleInput,
@@ -197,8 +197,8 @@ export class UpdateUseCaseDataAttributeByProjectManagerComponent implements OnIn
 
   private prepare(): void {
     this.useCase
-      .prepare(new UseCaseSeedsCommand<UpdateUseCaseDataAttributeByProjectManagerSeedsCommand>(
-        new UpdateUseCaseDataAttributeByProjectManagerSeedsCommand(this.entityId),
+      .prepare(new UseCaseSeedsCommand<AddNewUseCaseDataAttributeByProjectManagerSeedsCommand>(
+        new AddNewUseCaseDataAttributeByProjectManagerSeedsCommand(this.entityId),
         this.localeService.getLocale().getValue()
       ))
       .subscribe(fruitSeeds => {

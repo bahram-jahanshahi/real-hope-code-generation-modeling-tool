@@ -28,11 +28,18 @@
                 </span>
       </button>
       <!-- Use case data attribute -->
+      <button mat-list-item class="list-item" (click)="sideBarClicked('list-use-case-by-project-manager')">
+        <mat-icon matListIcon>playlist_add_check</mat-icon>
+        <span matLine *ngIf="(isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb">
+            {{ 'SideNav.UseCase' | translate }}
+        </span>
+      </button>
+      <!-- Use case data attribute -->
       <button mat-list-item class="list-item" (click)="sideBarClicked('list-use-case-data-attribute-by-project-manager')">
         <mat-icon matListIcon>playlist_add_check</mat-icon>
         <span matLine *ngIf="(isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb">
-                    {{ 'SideNav.UseCaseDataAttribute' | translate }}
-                </span>
+            {{ 'SideNav.UseCaseDataAttribute' | translate }}
+        </span>
       </button>
       <!-- Preferences -->
       <button mat-list-item class="list-item" (click)="sideBarClicked('preferences')">

@@ -5,18 +5,8 @@
   <div *ngIf='!readyToUpdate' style='height: 240px; display: flex; align-items: center; justify-content: center;'>    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>  </div>  <form [formGroup]='reactiveForm' *ngIf='readyToUpdate'>    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
-          {{'AddNewSoftwareByProjectManager.Id' | translate}}
-        </mat-label>
-        <input matInput type='number' formControlName='id'>
-        <mat-error *ngIf="this.reactiveForm.get('id').invalid">
-          {{'AddNewSoftwareByProjectManager.IdError' | translate}}
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
-      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
-        <mat-label>
           {{'AddNewSoftwareByProjectManager.SoftwareName' | translate}}
+          <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='softwareName'>
         <mat-error *ngIf="this.reactiveForm.get('softwareName').invalid">
@@ -28,6 +18,7 @@
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
           {{'AddNewSoftwareByProjectManager.SoftwareTitle' | translate}}
+          <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='softwareTitle'>
         <mat-error *ngIf="this.reactiveForm.get('softwareTitle').invalid">
@@ -39,6 +30,7 @@
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
           {{'AddNewSoftwareByProjectManager.SpringBootProjectPath' | translate}}
+          <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='springBootProjectPath'>
         <mat-error *ngIf="this.reactiveForm.get('springBootProjectPath').invalid">
@@ -50,6 +42,7 @@
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
           {{'AddNewSoftwareByProjectManager.SpringBootProjectMainPackage' | translate}}
+          <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='springBootProjectMainPackage'>
         <mat-error *ngIf="this.reactiveForm.get('springBootProjectMainPackage').invalid">
@@ -61,6 +54,7 @@
       <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
         <mat-label>
           {{'AddNewSoftwareByProjectManager.SpringBootJavaSrcPath' | translate}}
+          <span style='color: red;'>*</span>
         </mat-label>
         <input matInput formControlName='springBootJavaSrcPath'>
         <mat-error *ngIf="this.reactiveForm.get('springBootJavaSrcPath').invalid">

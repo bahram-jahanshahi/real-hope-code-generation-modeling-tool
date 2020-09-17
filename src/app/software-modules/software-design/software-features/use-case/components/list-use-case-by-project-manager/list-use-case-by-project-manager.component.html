@@ -1,21 +1,20 @@
 <mat-card [ngStyle]='!isWebMedium ? {padding: 4} : {}'>
   <mat-card-header *ngIf='isWebMedium'>
     <mat-card-title>
-      {{'ListUseCaseDataAttributeByProjectManager.FormTitle' | translate}}
+      {{'ListUseCaseByProjectManager.FormTitle' | translate}}
     </mat-card-title>
   </mat-card-header>
   <mat-divider *ngIf='isWebMedium'></mat-divider>
   <mat-card-content style='padding-top: 8px; padding-bottom: 92px'>
-    <button mat-raised-button color='primary' (click)='addNew()'>افزودن صفت های داده مورد کاربری</button>
     <!-- Search -->
     <fieldset style='background-color: #f9f9f9; border-radius: 16px;'>
       <legend>جستجو</legend>
       <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
         <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
           <mat-label>
-            {{'ListUseCaseDataAttributeByProjectManager.UseCaseDataAttributeNameSearchField' | translate}}
+            {{'ListUseCaseByProjectManager.UseCaseNameSearchField' | translate}}
           </mat-label>
-        <input matInput [formControl]='useCaseDataAttributeNameFormControl'>
+        <input matInput [formControl]='useCaseNameFormControl'>
         </mat-form-field>
       </div>
     <app-search-button-bar
@@ -30,7 +29,7 @@
       <table mat-table [dataSource]='dataSource' style='width: 100%'>
         <ng-container matColumnDef='Id'>
           <mat-header-cell *matHeaderCellDef>
-            {{ 'ListUseCaseDataAttributeByProjectManager.IdColumn' | translate }}
+            {{ 'ListUseCaseByProjectManager.IdColumn' | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef='let element'>
             {{element.id}}
@@ -38,42 +37,58 @@
         </ng-container>
         <ng-container matColumnDef='UseCaseName'>
           <mat-header-cell *matHeaderCellDef>
-            {{ 'ListUseCaseDataAttributeByProjectManager.UseCaseNameColumn' | translate }}
+            {{ 'ListUseCaseByProjectManager.UseCaseNameColumn' | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef='let element'>
             {{element.useCaseName}}
           </mat-cell>
         </ng-container>
-        <ng-container matColumnDef='UseCaseDataName'>
+        <ng-container matColumnDef='UserInterfaceType'>
           <mat-header-cell *matHeaderCellDef>
-            {{ 'ListUseCaseDataAttributeByProjectManager.UseCaseDataNameColumn' | translate }}
+            {{ 'ListUseCaseByProjectManager.UserInterfaceTypeColumn' | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef='let element'>
-            {{element.useCaseDataName}}
+            {{element.userInterfaceType}}
           </mat-cell>
         </ng-container>
-        <ng-container matColumnDef='Name'>
+        <ng-container matColumnDef='SoftwareName'>
           <mat-header-cell *matHeaderCellDef>
-            {{ 'ListUseCaseDataAttributeByProjectManager.NameColumn' | translate }}
+            {{ 'ListUseCaseByProjectManager.SoftwareNameColumn' | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef='let element'>
-            {{element.name}}
+            {{element.softwareName}}
           </mat-cell>
         </ng-container>
-        <ng-container matColumnDef='UseCaseUsageEnum'>
+        <ng-container matColumnDef='SoftwareModuleName'>
           <mat-header-cell *matHeaderCellDef>
-            {{ 'ListUseCaseDataAttributeByProjectManager.UseCaseUsageEnumColumn' | translate }}
+            {{ 'ListUseCaseByProjectManager.SoftwareModuleNameColumn' | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef='let element'>
-            {{element.useCaseUsageEnum}}
+            {{element.softwareModuleName}}
           </mat-cell>
         </ng-container>
-        <ng-container matColumnDef='AttributeCategory'>
+        <ng-container matColumnDef='SoftwareFeatureName'>
           <mat-header-cell *matHeaderCellDef>
-            {{ 'ListUseCaseDataAttributeByProjectManager.AttributeCategoryColumn' | translate }}
+            {{ 'ListUseCaseByProjectManager.SoftwareFeatureNameColumn' | translate }}
           </mat-header-cell>
           <mat-cell *matCellDef='let element'>
-            {{element.attributeCategory}}
+            {{element.softwareFeatureName}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='SoftwareRole'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseByProjectManager.SoftwareRoleColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.softwareRole}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='GenerationEnable'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'ListUseCaseByProjectManager.GenerationEnableColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.generationEnable}}
           </mat-cell>
         </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

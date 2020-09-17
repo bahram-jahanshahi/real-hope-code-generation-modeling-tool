@@ -14,43 +14,46 @@ import {ErrorDialogData} from '../../../../../../shares/components/dialogs/error
 import {SelectEnum} from '../../../../../../core/domain/select-enum';
 import {UtilityDateService} from '../../../../../../shares/utilities/utility-date.service';
 import {
-  ListSoftwareByProjectManagerPlant,
-  ListSoftwareByProjectManagerService,
-  ListSoftwareByProjectManagerFruitSeeds,
-  ListSoftwareByProjectManagerSeedsCommand,
-} from '../../services/list-software-by-project-manager.service';
-import {Software4ProjectManager} from '../../domain/software4-project-manager';
-import {ViewSoftwareByProjectManagerComponent} from '../view-software-by-project-manager/view-software-by-project-manager.component';
-import {AddNewSoftwareByProjectManagerComponent} from '../add-new-software-by-project-manager/add-new-software-by-project-manager.component';
+  ListUseCaseByProjectManagerPlant,
+  ListUseCaseByProjectManagerService,
+  ListUseCaseByProjectManagerFruitSeeds,
+  ListUseCaseByProjectManagerSeedsCommand,
+} from '../../services/list-use-case-by-project-manager.service';
+import {UseCase4ProjectManager} from '../../domain/use-case4-project-manager';
+import {ViewUseCaseByProjectManagerComponent} from '../view-use-case-by-project-manager/view-use-case-by-project-manager.component';
 
 @Component({
-  selector: 'app-list-software-by-project-manager',
-  templateUrl: './list-software-by-project-manager.component.html',
-  styleUrls: ['./list-software-by-project-manager.component.css']
+  selector: 'app-list-use-case-by-project-manager',
+  templateUrl: './list-use-case-by-project-manager.component.html',
+  styleUrls: ['./list-use-case-by-project-manager.component.css']
 })
-export class ListSoftwareByProjectManagerComponent implements OnInit {
+export class ListUseCaseByProjectManagerComponent implements OnInit {
 
   loading = false;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   displayedColumns = [
     'Id',
-    'Name',
-    'Title'
+    'UseCaseName',
+    'UserInterfaceType',
+    'SoftwareName',
+    'SoftwareModuleName',
+    'SoftwareFeatureName',
+    'SoftwareRole',
+    'GenerationEnable'
   ];
 
-  dataSource = new MatTableDataSource<Software4ProjectManager>();
-  dataArray = new Array<Software4ProjectManager>();
+  dataSource = new MatTableDataSource<UseCase4ProjectManager>();
+  dataArray = new Array<UseCase4ProjectManager>();
 
 
   realTimeSearchEnabled = true;
   // form controls
-    softwareNameFormControl = new FormControl(null);
-    softwareTitleFormControl = new FormControl(null);
+    useCaseNameFormControl = new FormControl(null);
 
   isWebMedium = false;
 
-  constructor(private useCase: ListSoftwareByProjectManagerService,
+  constructor(private useCase: ListUseCaseByProjectManagerService,
               private navigationService: NavigationService,
               private dialogService: UtilityDialogService,
               private localeService: LocaleService,
@@ -63,8 +66,7 @@ export class ListSoftwareByProjectManagerComponent implements OnInit {
     this.paginator.pageSize = 10;
     this.paginator.page.subscribe(() => this.search());
     this.prepare();
-    this.realTime(this.softwareNameFormControl);
-    this.realTime(this.softwareTitleFormControl);
+    this.realTime(this.useCaseNameFormControl);
   }
 
   realTime(formControl: FormControl): void {
@@ -78,14 +80,12 @@ export class ListSoftwareByProjectManagerComponent implements OnInit {
 
   search(): void {
     this.loading = true;
-    const softwareNameInput = this.softwareNameFormControl.value;
-    const softwareTitleInput = this.softwareTitleFormControl.value;
+    const useCaseNameInput = this.useCaseNameFormControl.value;
     this.useCase
       .cultivate(
-        new UseCaseCommand<ListSoftwareByProjectManagerPlant>(
-          new ListSoftwareByProjectManagerPlant(
-            softwareNameInput,
-            softwareTitleInput,
+        new UseCaseCommand<ListUseCaseByProjectManagerPlant>(
+          new ListUseCaseByProjectManagerPlant(
+            useCaseNameInput,
             new PaginationCommand(this.paginator.pageIndex, this.paginator.pageSize)
           ),
           this.localeService.getLocale().getValue()
@@ -108,8 +108,8 @@ export class ListSoftwareByProjectManagerComponent implements OnInit {
 
   prepare(): void {
     this.useCase
-      .prepare(new UseCaseSeedsCommand<ListSoftwareByProjectManagerSeedsCommand>(
-        new ListSoftwareByProjectManagerSeedsCommand(null),
+      .prepare(new UseCaseSeedsCommand<ListUseCaseByProjectManagerSeedsCommand>(
+        new ListUseCaseByProjectManagerSeedsCommand(null),
         this.localeService.getLocale().getValue()
       ))
       .subscribe(fruitSeeds => {
@@ -133,16 +133,12 @@ export class ListSoftwareByProjectManagerComponent implements OnInit {
 
   view(row: any): void {
     this.dialogService
-      .quickPopupDialog(ViewSoftwareByProjectManagerComponent, row.id)
+      .quickPopupDialog(ViewUseCaseByProjectManagerComponent, row.id)
       .afterClosed()
       .subscribe(value => this.search());
   }
 
   addNew(): void {
-    this.dialogService
-      .quickPopupDialog(AddNewSoftwareByProjectManagerComponent, null)
-      .afterClosed()
-      .subscribe(value => this.search());
   }
 
 }

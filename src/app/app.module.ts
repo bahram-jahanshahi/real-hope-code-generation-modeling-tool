@@ -58,6 +58,9 @@ import {ListUseCaseDataAttributeByProjectManagerComponent} from './software-modu
 import {SearchButtonBarComponent} from './shares/components/buttons/search-button-bar/search-button-bar.component';
 import {ViewUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/view-use-case-data-attribute-by-project-manager/view-use-case-data-attribute-by-project-manager.component';
 import {UpdateUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/update-use-case-data-attribute-by-project-manager/update-use-case-data-attribute-by-project-manager.component';
+import {AddNewUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/add-new-use-case-data-attribute-by-project-manager/add-new-use-case-data-attribute-by-project-manager.component';
+import {ListUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/list-use-case-by-project-manager/list-use-case-by-project-manager.component';
+import {ViewUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/view-use-case-by-project-manager/view-use-case-by-project-manager.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader { // TranslateHttpLoader {
@@ -75,6 +78,10 @@ const appRoutes: Routes = [
   {
     path: 'app/admin/use-case-data-attribute/list-use-case-data-attribute-by-project-manager',
     component: ListUseCaseDataAttributeByProjectManagerComponent
+  },
+  {
+    path: 'app/admin/use-case/list-use-case-by-project-manager',
+    component: ListUseCaseByProjectManagerComponent
   }
 ];
 
@@ -90,6 +97,7 @@ const appRoutes: Routes = [
     ErrorDialogComponent,
     SubmitButtonBarComponent,
     DashboardComponent,
+    SearchButtonBarComponent,
     AddNewSoftwareByProjectManagerComponent,
     DeleteSoftwareByProjectManagerComponent,
     ListSoftwareByProjectManagerComponent,
@@ -98,7 +106,9 @@ const appRoutes: Routes = [
     ListUseCaseDataAttributeByProjectManagerComponent,
     ViewUseCaseDataAttributeByProjectManagerComponent,
     UpdateUseCaseDataAttributeByProjectManagerComponent,
-    SearchButtonBarComponent
+    AddNewUseCaseDataAttributeByProjectManagerComponent,
+    ListUseCaseByProjectManagerComponent,
+    ViewUseCaseByProjectManagerComponent
   ],
   imports: [
     BrowserModule,

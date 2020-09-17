@@ -1,0 +1,154 @@
+<div mat-dialog-title>
+  {{ 'AddNewUseCaseByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToUpdate' style='height: 240px; display: flex; align-items: center; justify-content: center;'>    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>  </div>  <form [formGroup]='reactiveForm' *ngIf='readyToUpdate'>    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.Name' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput formControlName='name'>
+        <mat-error *ngIf="this.reactiveForm.get('name').invalid">
+          {{'AddNewUseCaseByProjectManager.NameError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.Title' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput formControlName='title'>
+        <mat-error *ngIf="this.reactiveForm.get('title').invalid">
+          {{'AddNewUseCaseByProjectManager.TitleError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.FaTitle' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput formControlName='faTitle'>
+        <mat-error *ngIf="this.reactiveForm.get('faTitle').invalid">
+          {{'AddNewUseCaseByProjectManager.FaTitleError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.Description' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput formControlName='description'>
+        <mat-error *ngIf="this.reactiveForm.get('description').invalid">
+          {{'AddNewUseCaseByProjectManager.DescriptionError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.UserInterfaceType' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='userInterfaceTypeEnum'>
+          <mat-option *ngFor='let userInterfaceTypeEnum of userInterfaceTypeEnumArray' [value]='userInterfaceTypeEnum.value'>
+            {{userInterfaceTypeEnum.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('userInterfaceTypeEnum').invalid">
+          {{'AddNewUseCaseByProjectManager.UserInterfaceTypeError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.SoftwareFeature' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='softwareFeature'>
+          <mat-option *ngFor='let softwareFeature of softwareFeatureArray' [value]='softwareFeature.value'>
+            {{softwareFeature.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('softwareFeature').invalid">
+          {{'AddNewUseCaseByProjectManager.SoftwareFeatureError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.SoftwareApplicationPanel' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='softwareApplicationPanel'>
+          <mat-option *ngFor='let softwareApplicationPanel of softwareApplicationPanelArray' [value]='softwareApplicationPanel.value'>
+            {{softwareApplicationPanel.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('softwareApplicationPanel').invalid">
+          {{'AddNewUseCaseByProjectManager.SoftwareApplicationPanelError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.SoftwareRole' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='softwareRole'>
+          <mat-option *ngFor='let softwareRole of softwareRoleArray' [value]='softwareRole.value'>
+            {{softwareRole.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('softwareRole').invalid">
+          {{'AddNewUseCaseByProjectManager.SoftwareRoleError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.DataEntity' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='dataEntity'>
+          <mat-option *ngFor='let dataEntity of dataEntityArray' [value]='dataEntity.value'>
+            {{dataEntity.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('dataEntity').invalid">
+          {{'AddNewUseCaseByProjectManager.DataEntityError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'AddNewUseCaseByProjectManager.GenerationEnable' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='generationEnable'>
+        <mat-option [value]='false'>{{'AddNewUseCaseByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'AddNewUseCaseByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        <mat-error *ngIf="this.reactiveForm.get('generationEnable').invalid">
+          {{'AddNewUseCaseByProjectManager.GenerationEnableError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{'AddNewUseCaseByProjectManager.Close' | translate}}
+  </button>
+  <button mat-raised-button color='primary' (click)='submit()'>
+    {{'AddNewUseCaseByProjectManager.Submit' | translate}}
+  </button>
+</mat-dialog-actions>

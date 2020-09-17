@@ -1,0 +1,16 @@
+<div mat-dialog-title>
+  {{ 'DeleteUseCaseByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToDelete' style='height: 240px; display: flex; align-items: center; justify-content: center;'>
+    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{'DeleteUseCaseByProjectManager.Close' | translate}}
+  </button>
+  <button mat-raised-button color='primary' (click)='submit()'>
+    {{'DeleteUseCaseByProjectManager.Submit' | translate}}
+  </button>
+</mat-dialog-actions>

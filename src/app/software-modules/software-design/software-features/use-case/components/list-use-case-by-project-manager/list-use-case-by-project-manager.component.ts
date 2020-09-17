@@ -21,6 +21,7 @@ import {
 } from '../../services/list-use-case-by-project-manager.service';
 import {UseCase4ProjectManager} from '../../domain/use-case4-project-manager';
 import {ViewUseCaseByProjectManagerComponent} from '../view-use-case-by-project-manager/view-use-case-by-project-manager.component';
+import {AddNewUseCaseByProjectManagerComponent} from '../add-new-use-case-by-project-manager/add-new-use-case-by-project-manager.component';
 
 @Component({
   selector: 'app-list-use-case-by-project-manager',
@@ -139,6 +140,10 @@ export class ListUseCaseByProjectManagerComponent implements OnInit {
   }
 
   addNew(): void {
+    this.dialogService
+      .quickPopupDialog(AddNewUseCaseByProjectManagerComponent, null)
+      .afterClosed()
+      .subscribe(value => this.search());
   }
 
 }

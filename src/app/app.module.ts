@@ -61,6 +61,9 @@ import {UpdateUseCaseDataAttributeByProjectManagerComponent} from './software-mo
 import {AddNewUseCaseDataAttributeByProjectManagerComponent} from './software-modules/software-design/software-features/use-case-data-attribute/components/add-new-use-case-data-attribute-by-project-manager/add-new-use-case-data-attribute-by-project-manager.component';
 import {ListUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/list-use-case-by-project-manager/list-use-case-by-project-manager.component';
 import {ViewUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/view-use-case-by-project-manager/view-use-case-by-project-manager.component';
+import {AddNewUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/add-new-use-case-by-project-manager/add-new-use-case-by-project-manager.component';
+import {UpdateUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/update-use-case-by-project-manager/update-use-case-by-project-manager.component';
+import {DeleteUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/delete-use-case-by-project-manager/delete-use-case-by-project-manager.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader { // TranslateHttpLoader {
@@ -108,7 +111,10 @@ const appRoutes: Routes = [
     UpdateUseCaseDataAttributeByProjectManagerComponent,
     AddNewUseCaseDataAttributeByProjectManagerComponent,
     ListUseCaseByProjectManagerComponent,
-    ViewUseCaseByProjectManagerComponent
+    ViewUseCaseByProjectManagerComponent,
+    AddNewUseCaseByProjectManagerComponent,
+    UpdateUseCaseByProjectManagerComponent,
+    DeleteUseCaseByProjectManagerComponent
   ],
   imports: [
     BrowserModule,

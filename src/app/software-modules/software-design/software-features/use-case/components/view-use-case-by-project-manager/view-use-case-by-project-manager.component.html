@@ -1,0 +1,128 @@
+<div mat-dialog-title>
+  {{ 'ViewUseCaseByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToView' style='height: 240px; display: flex; align-items: center; justify-content: center;'>
+    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>
+  </div>
+  <mat-tab-group *ngIf='readyToView'>
+    <mat-tab label="{{'ViewUseCaseByProjectManager.Profile' | translate}}">
+      <table class='baf-table' *ngIf='readyToView'>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.Id' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.id}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.UseCaseName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.useCaseName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.Title' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.title}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.FaTitle' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.faTitle}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.Description' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.description}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.UserInterfaceType' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.userInterfaceType}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.SoftwareName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.softwareName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.SoftwareModuleName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.softwareModuleName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.SoftwareFeatureName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.softwareFeatureName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.SoftwareApplicationPanelName' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.softwareApplicationPanelName}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.SoftwareRole' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.softwareRole}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.DataEntity' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.dataEntity}}
+          </td>
+        </tr>
+        <tr>
+          <td class='baf-table-key'>
+            {{ 'ViewUseCaseByProjectManager.GenerationEnable' | translate }}
+          </td>
+          <td class='baf-table-value'>
+            {{ entity.generationEnable}}
+          </td>
+        </tr>
+      </table>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{ 'ViewUseCaseByProjectManager.Cancel' | translate }}  </button>
+  <button mat-flat-button (click)='updateUseCase()'>
+    {{ 'ViewUseCaseByProjectManager.UpdateUseCase' | translate }}
+  </button>
+  <button mat-flat-button (click)='deleteUseCase()'>
+    {{ 'ViewUseCaseByProjectManager.DeleteUseCase' | translate }}
+  </button>
+</mat-dialog-actions>

@@ -77,8 +77,9 @@ export class AddNewUseCaseDataAttributeByProjectManagerPlant {
   useCaseData: SelectEntity;
   fruitSeedsAttribute: SelectEntity;
   dataEnum: SelectEntity;
+  relatedDataEntityAttribute: SelectEntity;
 
-  constructor(id: number, name: string, title: string, faTitle: string, description: string, uiRow: number, uiColumn: number, useCaseUsageEnum: SelectEnum, attributeQuantity: SelectEnum, attributeCategory: SelectEnum, primitiveAttributeType: SelectEnum, setterOfUpdatePath: string, getterOfUpdatePath: string, nullable: boolean, required: boolean, minLength: number, maxLength: number, min: number, max: number, errorTip: string, domainEntityAttributeType: SelectEntity, dataEntityAttributeType: SelectEntity, useCaseData: SelectEntity, fruitSeedsAttribute: SelectEntity, dataEnum: SelectEntity  ) {
+  constructor(id: number, name: string, title: string, faTitle: string, description: string, uiRow: number, uiColumn: number, useCaseUsageEnum: SelectEnum, attributeQuantity: SelectEnum, attributeCategory: SelectEnum, primitiveAttributeType: SelectEnum, setterOfUpdatePath: string, getterOfUpdatePath: string, nullable: boolean, required: boolean, minLength: number, maxLength: number, min: number, max: number, errorTip: string, domainEntityAttributeType: SelectEntity, dataEntityAttributeType: SelectEntity, useCaseData: SelectEntity, fruitSeedsAttribute: SelectEntity, dataEnum: SelectEntity, relatedDataEntityAttribute: SelectEntity  ) {
     this.id = id;
     this.name = name;
     this.title = title;
@@ -104,6 +105,7 @@ export class AddNewUseCaseDataAttributeByProjectManagerPlant {
     this.useCaseData = useCaseData;
     this.fruitSeedsAttribute = fruitSeedsAttribute;
     this.dataEnum = dataEnum;
+    this.relatedDataEntityAttribute = relatedDataEntityAttribute;
   }
 }
 
@@ -142,6 +144,8 @@ export class AddNewUseCaseDataAttributeByProjectManagerFruitSeeds {
   fruitSeedsAttributeArray: Array<SelectEntity>;
   dataEnum: SelectEntity;
   dataEnumArray: Array<SelectEntity>;
+  relatedDataEntityAttribute: SelectEntity;
+  relatedDataEntityAttributeArray: Array<SelectEntity>;
 }
 
 export class AddNewUseCaseDataAttributeByProjectManagerSeedsCommand {

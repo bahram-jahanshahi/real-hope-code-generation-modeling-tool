@@ -65,6 +65,11 @@ import {AddNewUseCaseByProjectManagerComponent} from './software-modules/softwar
 import {UpdateUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/update-use-case-by-project-manager/update-use-case-by-project-manager.component';
 import {DeleteUseCaseByProjectManagerComponent} from './software-modules/software-design/software-features/use-case/components/delete-use-case-by-project-manager/delete-use-case-by-project-manager.component';
 import { UseCaseDataTableViewComponent } from './software-modules/software-design/software-features/use-case/components/view-use-case-by-project-manager/use-case-data-table-view/use-case-data-table-view.component';
+import {GridListSampleBByProjectManagerComponent} from './software-modules/sample/software-features/sample-b/components/grid-list-sample-b-by-project-manager/grid-list-sample-b-by-project-manager.component';
+import {ViewSampleBByProjectManagerComponent} from './software-modules/sample/software-features/sample-b/components/view-sample-b-by-project-manager/view-sample-b-by-project-manager.component';
+import {AddNewSampleBByProjectManagerComponent} from './software-modules/sample/software-features/sample-b/components/add-new-sample-b-by-project-manager/add-new-sample-b-by-project-manager.component';
+import {UpdateSampleBByProjectManagerComponent} from './software-modules/sample/software-features/sample-b/components/update-sample-b-by-project-manager/update-sample-b-by-project-manager.component';
+import {DeleteSampleBByProjectManagerComponent} from './software-modules/sample/software-features/sample-b/components/delete-sample-b-by-project-manager/delete-sample-b-by-project-manager.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader { // TranslateHttpLoader {
@@ -86,6 +91,10 @@ const appRoutes: Routes = [
   {
     path: 'app/admin/use-case/list-use-case-by-project-manager',
     component: ListUseCaseByProjectManagerComponent
+  },
+  {
+    path: 'app/admin/sample/grid-list-sample-b-by-project-manager',
+    component: GridListSampleBByProjectManagerComponent
   }
 ];
 
@@ -116,7 +125,12 @@ const appRoutes: Routes = [
     AddNewUseCaseByProjectManagerComponent,
     UpdateUseCaseByProjectManagerComponent,
     DeleteUseCaseByProjectManagerComponent,
-    UseCaseDataTableViewComponent
+    UseCaseDataTableViewComponent,
+    GridListSampleBByProjectManagerComponent,
+    ViewSampleBByProjectManagerComponent,
+    AddNewSampleBByProjectManagerComponent,
+    UpdateSampleBByProjectManagerComponent,
+    DeleteSampleBByProjectManagerComponent
   ],
   imports: [
     BrowserModule,

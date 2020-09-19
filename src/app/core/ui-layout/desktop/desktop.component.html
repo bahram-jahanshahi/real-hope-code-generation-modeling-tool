@@ -41,6 +41,13 @@
             {{ 'SideNav.UseCaseDataAttribute' | translate }}
         </span>
       </button>
+      <!-- Sample B -->
+      <button mat-list-item class="list-item" (click)="sideBarClicked('grid-list-sample-b-by-project-manager')">
+        <mat-icon matListIcon>playlist_add_check</mat-icon>
+        <span matLine *ngIf="(isLargeWeb && ! isSideBarMinimized) || ! isMediumWeb">
+            {{ 'SideNav.SampleB' | translate }}
+        </span>
+      </button>
       <!-- Preferences -->
       <button mat-list-item class="list-item" (click)="sideBarClicked('preferences')">
         <mat-icon matListIcon>playlist_add_check</mat-icon>

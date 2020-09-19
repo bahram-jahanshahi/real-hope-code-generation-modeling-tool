@@ -63,8 +63,9 @@ export class UpdateUseCaseByProjectManagerPlant {
   softwareRole: SelectEntity;
   dataEntity: SelectEntity;
   generationEnable: boolean;
+  crudCodeGeneration: SelectEntity;
 
-  constructor(id: number, name: string, title: string, faTitle: string, description: string, userInterfaceType: SelectEnum, softwareFeature: SelectEntity, softwareApplicationPanel: SelectEntity, softwareRole: SelectEntity, dataEntity: SelectEntity, generationEnable: boolean  ) {
+  constructor(id: number, name: string, title: string, faTitle: string, description: string, userInterfaceType: SelectEnum, softwareFeature: SelectEntity, softwareApplicationPanel: SelectEntity, softwareRole: SelectEntity, dataEntity: SelectEntity, generationEnable: boolean, crudCodeGeneration: SelectEntity  ) {
     this.id = id;
     this.name = name;
     this.title = title;
@@ -76,6 +77,7 @@ export class UpdateUseCaseByProjectManagerPlant {
     this.softwareRole = softwareRole;
     this.dataEntity = dataEntity;
     this.generationEnable = generationEnable;
+    this.crudCodeGeneration = crudCodeGeneration;
   }
 }
 
@@ -96,6 +98,8 @@ export class UpdateUseCaseByProjectManagerFruitSeeds {
   dataEntity: SelectEntity;
   dataEntityArray: Array<SelectEntity>;
   generationEnable: boolean;
+  crudCodeGeneration: SelectEntity;
+  crudCodeGenerationArray: Array<SelectEntity>;
 }
 
 export class UpdateUseCaseByProjectManagerSeedsCommand {

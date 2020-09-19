@@ -1,0 +1,155 @@
+<mat-card [ngStyle]='!isWebMedium ? {padding: 4} : {}'>
+  <mat-card-header *ngIf='isWebMedium'>
+    <mat-card-title>
+      {{'GridListSampleBByProjectManager.FormTitle' | translate}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider *ngIf='isWebMedium'></mat-divider>
+  <mat-card-content style='padding-top: 8px; padding-bottom: 92px'>
+    <button mat-raised-button color='primary' (click)='addNew()'>افزودننمونه دوم به دست مدیریت پروژه</button>
+    <!-- Search -->
+    <fieldset style='background-color: #f9f9f9; border-radius: 16px;'>
+      <legend>جستجو</legend>
+      <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.IdSearchField' | translate}}
+          </mat-label>
+        <input matInput type='number' [formControl]='idFormControl'>
+        </mat-form-field>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.NameSearchField' | translate}}
+          </mat-label>
+        <input matInput [formControl]='nameFormControl'>
+        </mat-form-field>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.ActiveSearchField' | translate}}
+          </mat-label>
+        <mat-select [formControl]='activeFormControl'>
+        <mat-option [value]='false'>{{'GridListSampleBByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'GridListSampleBByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        </mat-form-field>
+      </div>
+      <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.CreateDateSearchField' | translate}}
+          </mat-label>
+        <input matInput [matDatepicker]='createDateDatepicker' [formControl]='createDateFormControl'>
+        <mat-datepicker-toggle matSuffix [for]='createDateDatepicker'></mat-datepicker-toggle>
+        <mat-datepicker touchUi #createDateDatepicker></mat-datepicker>        </mat-form-field>
+      </div>
+      <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.ValueSearchField' | translate}}
+          </mat-label>
+        <input matInput type='number' [formControl]='valueFormControl'>
+        </mat-form-field>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.SampleStatusSearchField' | translate}}
+          </mat-label>
+        <mat-select [formControl]='sampleStatusFormControl'>
+          <mat-option *ngFor='let sampleStatusEnum of sampleStatusEnumArray' [value]='sampleStatusEnum.value'>
+            {{sampleStatusEnum.title}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.SampleASearchField' | translate}}
+          </mat-label>
+        <mat-select [formControl]='sampleAFormControl'>
+          <mat-option [value]='null'>
+            {{ 'GridListSampleBByProjectManager.None' | translate }}
+          </mat-option>
+          <mat-option *ngFor='let sampleA of sampleAArray' [value]='sampleA.value'>
+            {{sampleA.title}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+      </div>
+    <app-search-button-bar
+        [loading]="loading"
+        (clickOnSearch)="search()"
+        (realTimeSearchChanged)="realTimeSearchChanged($event)"
+        (resetSearch)="resetSearchForm()">
+      </app-search-button-bar>
+    </fieldset>
+    <!-- Table -->
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' *ngIf='isWebMedium'>
+      <table mat-table [dataSource]='dataSource' style='width: 100%'>
+        <ng-container matColumnDef='Id'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.IdColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.id}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='Name'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.NameColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.name}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='Active'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.ActiveColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.active}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='CreateDate'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.CreateDateColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.createDate}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='Value'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.ValueColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.value}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='SampleStatus'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.SampleStatusColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.sampleStatus}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef='SampleA'>
+          <mat-header-cell *matHeaderCellDef>
+            {{ 'GridListSampleBByProjectManager.SampleAColumn' | translate }}
+          </mat-header-cell>
+          <mat-cell *matCellDef='let element'>
+            {{element.sampleA}}
+          </mat-cell>
+        </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" mat-ripple
+                 (click)="view(row)"
+                 style="cursor: pointer">
+        </mat-row>
+      </table>
+    </div>
+    <!-- No result -->
+    <div *ngIf='dataArray.length === 0'>
+      <span style='color: #cf1414'>
+        نتیجه ای یافت نشد!
+      </span>
+    </div>
+    <!-- paginator -->
+    <mat-paginator [pageSizeOptions]='[5, 10, 20]' showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+</mat-card>

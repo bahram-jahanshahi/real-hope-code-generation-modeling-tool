@@ -1,0 +1,95 @@
+<div mat-dialog-title>
+  {{ 'UpdateSampleBByProjectManager.FormTitle' | translate }}
+</div>
+<mat-dialog-content>
+  <div *ngIf='!readyToUpdate' style='height: 240px; display: flex; align-items: center; justify-content: center;'>    <mat-spinner diameter='128' strokeWidth='1'></mat-spinner>  </div>  <form [formGroup]='reactiveForm' *ngIf='readyToUpdate'>    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSampleBByProjectManager.Name' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput formControlName='name'>
+        <mat-error *ngIf="this.reactiveForm.get('name').invalid">
+          {{'UpdateSampleBByProjectManager.NameError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSampleBByProjectManager.Active' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='active'>
+        <mat-option [value]='false'>{{'UpdateSampleBByProjectManager.BooleanNo' | translate}}</mat-option>        <mat-option [value]='true'>{{'UpdateSampleBByProjectManager.BooleanYes' | translate}}</mat-option>        </mat-select>        <mat-error *ngIf="this.reactiveForm.get('active').invalid">
+          {{'UpdateSampleBByProjectManager.ActiveError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSampleBByProjectManager.CreateDate' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput [matDatepicker]='createDateDatepicker' formControlName='createDate'>
+        <mat-datepicker-toggle matSuffix [for]='createDateDatepicker'></mat-datepicker-toggle>
+        <mat-datepicker touchUi #createDateDatepicker></mat-datepicker>        <mat-error *ngIf="this.reactiveForm.get('createDate').invalid">
+          {{'UpdateSampleBByProjectManager.CreateDateError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSampleBByProjectManager.Value' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <input matInput type='number' formControlName='value'>
+        <mat-error *ngIf="this.reactiveForm.get('value').invalid">
+          {{'UpdateSampleBByProjectManager.ValueError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSampleBByProjectManager.SampleStatus' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='sampleStatusEnum'>
+          <mat-option *ngFor='let sampleStatusEnum of sampleStatusEnumArray' [value]='sampleStatusEnum.value'>
+            {{sampleStatusEnum.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('sampleStatusEnum').invalid">
+          {{'UpdateSampleBByProjectManager.SampleStatusError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateSampleBByProjectManager.SampleA' | translate}}
+          <span style='color: red;'>*</span>
+        </mat-label>
+        <mat-select formControlName='sampleA'>
+          <mat-option *ngFor='let sampleA of sampleAArray' [value]='sampleA.value'>
+            {{sampleA.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('sampleA').invalid">
+          {{'UpdateSampleBByProjectManager.SampleAError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-flat-button (click)='close()'>
+    {{'UpdateSampleBByProjectManager.Close' | translate}}
+  </button>
+  <button mat-raised-button color='primary' (click)='submit()'>
+    {{'UpdateSampleBByProjectManager.Submit' | translate}}
+  </button>
+</mat-dialog-actions>

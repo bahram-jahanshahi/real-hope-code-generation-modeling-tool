@@ -37,6 +37,7 @@ export class AddNewUseCaseDataAttributeByProjectManagerComponent implements OnIn
   useCaseDataArray: Array<SelectEntity>;
   fruitSeedsAttributeArray: Array<SelectEntity>;
   dataEnumArray: Array<SelectEntity>;
+  relatedDataEntityAttributeArray: Array<SelectEntity>;
 
   constructor(private useCase: AddNewUseCaseDataAttributeByProjectManagerService,
               private dialogService: UtilityDialogService,
@@ -86,6 +87,8 @@ export class AddNewUseCaseDataAttributeByProjectManagerComponent implements OnIn
     this.fruitSeedsAttributeArray = fruitSeeds.fruitSeedsAttributeArray;
     const dataEnumFruitSeeds = fruitSeeds.dataEnum;
     this.dataEnumArray = fruitSeeds.dataEnumArray;
+    const relatedDataEntityAttributeFruitSeeds = fruitSeeds.relatedDataEntityAttribute;
+    this.relatedDataEntityAttributeArray = fruitSeeds.relatedDataEntityAttributeArray;
     this.reactiveForm = new FormGroup({
       id: new FormControl(idFruitSeeds, [Validators.nullValidator, Validators.required]),
       name: new FormControl(nameFruitSeeds, [Validators.nullValidator, Validators.required]),
@@ -111,7 +114,8 @@ export class AddNewUseCaseDataAttributeByProjectManagerComponent implements OnIn
       dataEntityAttributeType: new FormControl(dataEntityAttributeTypeFruitSeeds.value, []),
       useCaseData: new FormControl(useCaseDataFruitSeeds.value, [Validators.nullValidator, Validators.required]),
       fruitSeedsAttribute: new FormControl(fruitSeedsAttributeFruitSeeds.value, []),
-      dataEnum: new FormControl(dataEnumFruitSeeds.value, [])
+      dataEnum: new FormControl(dataEnumFruitSeeds.value, []),
+      relatedDataEntityAttribute: new FormControl(relatedDataEntityAttributeFruitSeeds.value, [])
     });
     this.readyToUpdate = true;
   }
@@ -153,6 +157,7 @@ export class AddNewUseCaseDataAttributeByProjectManagerComponent implements OnIn
     const useCaseDataInput = new SelectEntity(null, this.reactiveForm.get('useCaseData').value);
     const fruitSeedsAttributeInput = new SelectEntity(null, this.reactiveForm.get('fruitSeedsAttribute').value);
     const dataEnumInput = new SelectEntity(null, this.reactiveForm.get('dataEnum').value);
+    const relatedDataEntityAttributeInput = new SelectEntity(null, this.reactiveForm.get('relatedDataEntityAttribute').value);
     this.useCase
       .cultivate(new UseCaseCommand<AddNewUseCaseDataAttributeByProjectManagerPlant>(
         new AddNewUseCaseDataAttributeByProjectManagerPlant(
@@ -180,7 +185,8 @@ export class AddNewUseCaseDataAttributeByProjectManagerComponent implements OnIn
           dataEntityAttributeTypeInput,
           useCaseDataInput,
           fruitSeedsAttributeInput,
-          dataEnumInput
+          dataEnumInput,
+          relatedDataEntityAttributeInput
         ),
         this.localeService.getLocale().getValue()
       ))

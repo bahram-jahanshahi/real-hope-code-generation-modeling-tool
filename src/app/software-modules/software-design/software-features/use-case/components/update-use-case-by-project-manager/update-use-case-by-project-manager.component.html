@@ -142,6 +142,25 @@
         </mat-error>
       </mat-form-field>
     </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateUseCaseByProjectManager.CrudCodeGeneration' | translate}}
+
+        </mat-label>
+        <mat-select formControlName='crudCodeGeneration'>
+          <mat-option [value]='null'>
+            {{ 'UpdateUseCaseByProjectManager.None' | translate }}
+          </mat-option>
+          <mat-option *ngFor='let crudCodeGeneration of crudCodeGenerationArray' [value]='crudCodeGeneration.value'>
+            {{crudCodeGeneration.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('crudCodeGeneration').invalid">
+          {{'UpdateUseCaseByProjectManager.CrudCodeGenerationError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>

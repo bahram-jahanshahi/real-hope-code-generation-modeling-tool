@@ -33,6 +33,7 @@ export class AddNewUseCaseByProjectManagerComponent implements OnInit {
   softwareApplicationPanelArray: Array<SelectEntity>;
   softwareRoleArray: Array<SelectEntity>;
   dataEntityArray: Array<SelectEntity>;
+  crudCodeGenerationArray: Array<SelectEntity>;
 
   constructor(private useCase: AddNewUseCaseByProjectManagerService,
               private dialogService: UtilityDialogService,
@@ -64,6 +65,8 @@ export class AddNewUseCaseByProjectManagerComponent implements OnInit {
     const dataEntityFruitSeeds = fruitSeeds.dataEntity;
     this.dataEntityArray = fruitSeeds.dataEntityArray;
     const generationEnableFruitSeeds = fruitSeeds.generationEnable;
+    const crudCodeGenerationFruitSeeds = fruitSeeds.crudCodeGeneration;
+    this.crudCodeGenerationArray = fruitSeeds.crudCodeGenerationArray;
     this.reactiveForm = new FormGroup({
       id: new FormControl(idFruitSeeds, [Validators.minLength(1), Validators.maxLength(100), Validators.min(1), Validators.max(10000000)]),
       name: new FormControl(nameFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
@@ -75,7 +78,8 @@ export class AddNewUseCaseByProjectManagerComponent implements OnInit {
       softwareApplicationPanel: new FormControl(softwareApplicationPanelFruitSeeds.value, [Validators.nullValidator, Validators.required]),
       softwareRole: new FormControl(softwareRoleFruitSeeds.value, [Validators.nullValidator, Validators.required]),
       dataEntity: new FormControl(dataEntityFruitSeeds.value, [Validators.nullValidator, Validators.required]),
-      generationEnable: new FormControl(generationEnableFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)])
+      generationEnable: new FormControl(generationEnableFruitSeeds, [Validators.nullValidator, Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+      crudCodeGeneration: new FormControl(crudCodeGenerationFruitSeeds.value, [])
     });
     this.readyToUpdate = true;
   }
@@ -103,6 +107,7 @@ export class AddNewUseCaseByProjectManagerComponent implements OnInit {
     const softwareRoleInput = new SelectEntity(null, this.reactiveForm.get('softwareRole').value);
     const dataEntityInput = new SelectEntity(null, this.reactiveForm.get('dataEntity').value);
     const generationEnableInput = this.reactiveForm.get('generationEnable').value;
+    const crudCodeGenerationInput = new SelectEntity(null, this.reactiveForm.get('crudCodeGeneration').value);
     this.useCase
       .cultivate(new UseCaseCommand<AddNewUseCaseByProjectManagerPlant>(
         new AddNewUseCaseByProjectManagerPlant(
@@ -116,7 +121,8 @@ export class AddNewUseCaseByProjectManagerComponent implements OnInit {
           softwareApplicationPanelInput,
           softwareRoleInput,
           dataEntityInput,
-          generationEnableInput
+          generationEnableInput,
+          crudCodeGenerationInput
         ),
         this.localeService.getLocale().getValue()
       ))

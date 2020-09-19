@@ -11,6 +11,7 @@ export class NavigationService {
   public LIST_SOFTWARE_BY_PROJECT_MANAGER = 'LIST_SOFTWARE_BY_PROJECT_MANAGER';
   public LIST_USE_CASE_DATA_ATTRIBUTE_BY_PROJECT_MANAGER = 'LIST_USE_CASE_DATA_ATTRIBUTE_BY_PROJECT_MANAGER';
   public LIST_USE_CASE_BY_PROJECT_MANAGER = 'LIST_USE_CASE_BY_PROJECT_MANAGER';
+  public GRID_LIST_SAMPLE_B_BY_PROJECT_MANAGER = 'GRID_LIST_SAMPLE_B_BY_PROJECT_MANAGER';
   constructor(private router: Router) {
   }
 
@@ -34,6 +35,10 @@ export class NavigationService {
       }
       case this.LIST_USE_CASE_BY_PROJECT_MANAGER: {
         this.url('app/admin/use-case/list-use-case-by-project-manager');
+        break;
+      }
+      case this.GRID_LIST_SAMPLE_B_BY_PROJECT_MANAGER: {
+        this.url('app/admin/sample/grid-list-sample-b-by-project-manager');
         break;
       }
     }

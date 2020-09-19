@@ -115,6 +115,10 @@ export class DesktopComponent implements OnInit {
         this.url(this.navigationService.LIST_USE_CASE_BY_PROJECT_MANAGER);
         break;
       }
+      case 'grid-list-sample-b-by-project-manager': {
+        this.url(this.navigationService.GRID_LIST_SAMPLE_B_BY_PROJECT_MANAGER);
+        break;
+      }
     }
   }
 

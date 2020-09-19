@@ -338,6 +338,25 @@
         </mat-error>
       </mat-form-field>
     </div>
+    <div fxLayout.gt-sm='row' fxLayout.lt-md='column' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+      <mat-form-field appearance='outline' fxFlex.gt-sm='50%' fxFlex.lt-md='100%'>
+        <mat-label>
+          {{'UpdateUseCaseDataAttributeByProjectManager.RelatedDataEntityAttribute' | translate}}
+
+        </mat-label>
+        <mat-select formControlName='relatedDataEntityAttribute'>
+          <mat-option [value]='null'>
+            {{ 'UpdateUseCaseDataAttributeByProjectManager.None' | translate }}
+          </mat-option>
+          <mat-option *ngFor='let relatedDataEntityAttribute of relatedDataEntityAttributeArray' [value]='relatedDataEntityAttribute.value'>
+            {{relatedDataEntityAttribute.title}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.reactiveForm.get('relatedDataEntityAttribute').invalid">
+          {{'UpdateUseCaseDataAttributeByProjectManager.RelatedDataEntityAttributeError' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </div>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>

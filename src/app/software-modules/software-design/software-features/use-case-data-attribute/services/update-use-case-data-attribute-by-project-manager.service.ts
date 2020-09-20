@@ -48,7 +48,7 @@ export class UpdateUseCaseDataAttributeByProjectManagerService {
 }
 
 export class UpdateUseCaseDataAttributeByProjectManagerFruit {
-  isSuccessful: boolean;
+  id: number;
 }
 
 export class UpdateUseCaseDataAttributeByProjectManagerPlant {

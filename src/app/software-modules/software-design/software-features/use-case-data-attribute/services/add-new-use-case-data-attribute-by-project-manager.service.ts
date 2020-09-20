@@ -48,7 +48,7 @@ export class AddNewUseCaseDataAttributeByProjectManagerService {
 }
 
 export class AddNewUseCaseDataAttributeByProjectManagerFruit {
-  isSuccessful: boolean;
+  id: number;
 }
 
 export class AddNewUseCaseDataAttributeByProjectManagerPlant {

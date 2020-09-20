@@ -48,7 +48,7 @@ export class ViewSampleBByProjectManagerService {
 }
 
 export class ViewSampleBByProjectManagerFruit {
-  id: SampleB4ProjectManager;
+  entity: SampleB4ProjectManager;
 }
 
 export class ViewSampleBByProjectManagerPlant {

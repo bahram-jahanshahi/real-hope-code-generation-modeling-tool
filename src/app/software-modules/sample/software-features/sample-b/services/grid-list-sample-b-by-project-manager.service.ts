@@ -56,18 +56,22 @@ export class GridListSampleBByProjectManagerPlant {
   id: number;
   name: string;
   active: boolean;
-  createDate: JavaDate;
-  value: number;
+  createDateBegin: JavaDate;
+  createDateEnd: JavaDate;
+  valueBegin: number;
+  valueEnd: number;
   sampleStatusEnum: SelectEnum;
   sampleA: SelectEntity;
   paginationCommand: PaginationCommand;
 
-  constructor(id: number, name: string, active: boolean, createDate: JavaDate, value: number, sampleStatus: SelectEnum, sampleA: SelectEntity, paginationCommand: PaginationCommand) {
+  constructor(id: number, name: string, active: boolean, createDateBegin: JavaDate, createDateEnd: JavaDate, valueBegin: number, valueEnd: number, sampleStatus: SelectEnum, sampleA: SelectEntity, paginationCommand: PaginationCommand) {
     this.id = id;
     this.name = name;
     this.active = active;
-    this.createDate = createDate;
-    this.value = value;
+    this.createDateBegin = createDateBegin;
+    this.createDateEnd = createDateEnd;
+    this.valueBegin = valueBegin;
+    this.valueEnd = valueEnd;
     this.sampleStatusEnum = sampleStatus;
     this.sampleA = sampleA;
     this.paginationCommand = paginationCommand;
@@ -75,6 +79,10 @@ export class GridListSampleBByProjectManagerPlant {
 }
 
 export class GridListSampleBByProjectManagerFruitSeeds {
+  sampleStatusEnum: SelectEnum;
+  sampleStatusEnumArray: Array<SelectEnum>;
+  sampleA: SelectEntity;
+  sampleAArray: Array<SelectEntity>;
 }
 
 export class GridListSampleBByProjectManagerSeedsCommand {

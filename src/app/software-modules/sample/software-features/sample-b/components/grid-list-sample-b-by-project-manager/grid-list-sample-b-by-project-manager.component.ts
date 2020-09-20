@@ -12,6 +12,7 @@ import {UseCaseSeedsCommand} from '../../../../../../core/domain/use-case-seeds-
 import {PaginationCommand} from '../../../../../../core/domain/pagination-command';
 import {ErrorDialogData} from '../../../../../../shares/components/dialogs/error-dialog/error-dialog.component';
 import {SelectEnum} from '../../../../../../core/domain/select-enum';
+import {SelectEntity} from '../../../../../../core/domain/select-entity';
 import {UtilityDateService} from '../../../../../../shares/utilities/utility-date.service';
 import {
   GridListSampleBByProjectManagerPlant,
@@ -22,7 +23,6 @@ import {
 import {SampleB4ProjectManager} from '../../domain/sample-b4-project-manager';
 import {ViewSampleBByProjectManagerComponent} from '../view-sample-b-by-project-manager/view-sample-b-by-project-manager.component';
 import {AddNewSampleBByProjectManagerComponent} from '../add-new-sample-b-by-project-manager/add-new-sample-b-by-project-manager.component';
-import {SelectEntity} from '../../../../../../core/domain/select-entity';
 
 @Component({
   selector: 'app-grid-list-sample-b-by-project-manager',
@@ -49,13 +49,17 @@ export class GridListSampleBByProjectManagerComponent implements OnInit {
 
   sampleStatusEnumArray = new Array<SelectEnum>();
 
+  sampleAArray = new Array<SelectEntity>();
+
   realTimeSearchEnabled = true;
   // form controls
     idFormControl = new FormControl(null);
     nameFormControl = new FormControl(null);
     activeFormControl = new FormControl(null);
-    createDateFormControl = new FormControl(null);
-    valueFormControl = new FormControl(null);
+    createDateBeginFormControl = new FormControl(null);
+    createDateEndFormControl = new FormControl(null);
+    valueBeginFormControl = new FormControl(null);
+    valueEndFormControl = new FormControl(null);
     sampleStatusFormControl = new FormControl(null);
     sampleAFormControl = new FormControl(null);
 
@@ -77,8 +81,10 @@ export class GridListSampleBByProjectManagerComponent implements OnInit {
     this.realTime(this.idFormControl);
     this.realTime(this.nameFormControl);
     this.realTime(this.activeFormControl);
-    this.realTime(this.createDateFormControl);
-    this.realTime(this.valueFormControl);
+    this.realTime(this.createDateBeginFormControl);
+    this.realTime(this.createDateEndFormControl);
+    this.realTime(this.valueBeginFormControl);
+    this.realTime(this.valueEndFormControl);
     this.realTime(this.sampleStatusFormControl);
     this.realTime(this.sampleAFormControl);
   }
@@ -97,8 +103,10 @@ export class GridListSampleBByProjectManagerComponent implements OnInit {
     const idInput = this.idFormControl.value;
     const nameInput = this.nameFormControl.value;
     const activeInput = this.activeFormControl.value;
-    const createDateInput = this.dateService.getJavaDateOfMoment(this.createDateFormControl.value);
-    const valueInput = this.valueFormControl.value;
+    const createDateBeginInput = this.dateService.getJavaDateOfMoment(this.createDateBeginFormControl.value);
+    const createDateEndInput = this.dateService.getJavaDateOfMoment(this.createDateEndFormControl.value);
+    const valueBeginInput = this.valueBeginFormControl.value;
+    const valueEndInput = this.valueEndFormControl.value;
     const sampleStatusInput = new SelectEnum(null, this.sampleStatusFormControl.value);
     const sampleAInput = new SelectEntity(null, this.sampleAFormControl.value);
     this.useCase
@@ -108,8 +116,10 @@ export class GridListSampleBByProjectManagerComponent implements OnInit {
             idInput,
             nameInput,
             activeInput,
-            createDateInput,
-            valueInput,
+            createDateBeginInput,
+            createDateEndInput,
+            valueBeginInput,
+            valueEndInput,
             sampleStatusInput,
             sampleAInput,
             new PaginationCommand(this.paginator.pageIndex, this.paginator.pageSize)
@@ -140,6 +150,8 @@ export class GridListSampleBByProjectManagerComponent implements OnInit {
       ))
       .subscribe(fruitSeeds => {
         if (fruitSeeds.isSuccessful) {
+          this.sampleStatusEnumArray = fruitSeeds.fruitSeeds.sampleStatusEnumArray;
+          this.sampleAArray = fruitSeeds.fruitSeeds.sampleAArray;
           this.search();
         } else {
           this.dialogService.showErrorDialog(new ErrorDialogData('', Array.of(fruitSeeds.message)));

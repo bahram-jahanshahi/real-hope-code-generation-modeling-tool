@@ -12,6 +12,7 @@ import {UseCaseSeedsCommand} from '../../../../../../core/domain/use-case-seeds-
 import {PaginationCommand} from '../../../../../../core/domain/pagination-command';
 import {ErrorDialogData} from '../../../../../../shares/components/dialogs/error-dialog/error-dialog.component';
 import {SelectEnum} from '../../../../../../core/domain/select-enum';
+import {SelectEntity} from '../../../../../../core/domain/select-entity';
 import {UtilityDateService} from '../../../../../../shares/utilities/utility-date.service';
 import {
   ListSoftwareByProjectManagerPlant,

@@ -33,19 +33,32 @@
       <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
         <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
           <mat-label>
-            {{'GridListSampleBByProjectManager.CreateDateSearchField' | translate}}
+            {{'GridListSampleBByProjectManager.CreateDateBeginSearchField' | translate}}
           </mat-label>
-        <input matInput [matDatepicker]='createDateDatepicker' [formControl]='createDateFormControl'>
-        <mat-datepicker-toggle matSuffix [for]='createDateDatepicker'></mat-datepicker-toggle>
-        <mat-datepicker touchUi #createDateDatepicker></mat-datepicker>        </mat-form-field>
-      </div>
-      <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
+        <input matInput [matDatepicker]='createDateBeginDatepicker' [formControl]='createDateBeginFormControl'>
+        <mat-datepicker-toggle matSuffix [for]='createDateBeginDatepicker'></mat-datepicker-toggle>
+        <mat-datepicker touchUi #createDateBeginDatepicker></mat-datepicker>        </mat-form-field>
         <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
           <mat-label>
-            {{'GridListSampleBByProjectManager.ValueSearchField' | translate}}
+            {{'GridListSampleBByProjectManager.CreateDateEndSearchField' | translate}}
           </mat-label>
-        <input matInput type='number' [formControl]='valueFormControl'>
+        <input matInput [matDatepicker]='createDateEndDatepicker' [formControl]='createDateEndFormControl'>
+        <mat-datepicker-toggle matSuffix [for]='createDateEndDatepicker'></mat-datepicker-toggle>
+        <mat-datepicker touchUi #createDateEndDatepicker></mat-datepicker>        </mat-form-field>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.ValueBeginSearchField' | translate}}
+          </mat-label>
+        <input matInput type='number' [formControl]='valueBeginFormControl'>
         </mat-form-field>
+        <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
+          <mat-label>
+            {{'GridListSampleBByProjectManager.ValueEndSearchField' | translate}}
+          </mat-label>
+        <input matInput type='number' [formControl]='valueEndFormControl'>
+        </mat-form-field>
+      </div>
+      <div fxLayout.lt-md='column' fxLayout.gt-sm='row' fxLayoutGap.gt-sm='16px' fxLayoutGap.lt-md='8px'>
         <mat-form-field appearance='outline' fxFlex.gt-sm='25%' fxFlex.lt-md='100%'>
           <mat-label>
             {{'GridListSampleBByProjectManager.SampleStatusSearchField' | translate}}

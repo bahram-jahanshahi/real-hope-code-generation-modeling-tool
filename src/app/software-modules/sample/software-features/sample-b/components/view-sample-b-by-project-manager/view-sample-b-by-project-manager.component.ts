@@ -61,14 +61,14 @@ export class ViewSampleBByProjectManagerComponent implements OnInit {
       });
   }
 
-  viewSampleBByProjectManager(): void {
+  updateSampleBByProjectManager(): void {
     this.dialogService
       .quickPopupDialog(UpdateSampleBByProjectManagerComponent, this.entityId)
       .afterClosed()
       .subscribe(value => this.cultivate());
   }
 
-  viewSampleBByProjectManager(): void {
+  deleteSampleBByProjectManager(): void {
     this.dialogService
       .quickPopupDialog(DeleteSampleBByProjectManagerComponent, this.entityId)
       .afterClosed()
